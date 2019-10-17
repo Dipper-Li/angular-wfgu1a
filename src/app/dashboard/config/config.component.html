@@ -1,0 +1,275 @@
+<div class="panel-body">
+    <div class='row col-lg-12'>
+        Service Instance
+    </div>
+    <div class='row' *ngIf="this.configType=='group'">
+            <div class='col-lg-3'>
+                <!-- <p-multiSelect [options]="cars" [style]="{width:'300px'}" [showHeader]="false"></p-multiSelect> -->
+                <input class="form-control" [(ngModel)]="this.su.groupName"/>
+            </div>
+        </div>
+    <div class='row' *ngIf="this.configType!='group'">
+        <div class='col-lg-3'>
+            <!-- <p-multiSelect [options]="cars" [style]="{width:'300px'}" [showHeader]="false"></p-multiSelect> -->
+            <select class="form-control" (change)="changeServiceInstance($event)" [value]="serviceInstance.id">
+                <option *ngFor="let si of su.subscribers" [value]="si.id">{{'('+si.desc+') '+si.value}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="row"><label></label></div>
+    <div class="row"><label></label></div>
+    <div class="row"><label></label></div>
+    <div class='row col-lg-12'>
+        <b>
+            Apple iPhone XS White 256GB<br>
+            Ultra Speed Service Plan 20GB Data
+        </b>
+    </div>
+    <div class='row'>
+        <div class='col-lg-12'>
+            <mat-tab-group [selectedIndex]="this.configType=='group'?2:0">
+                <mat-tab label="Basic Info" [disabled]="this.configType=='group'">
+                    <br>
+                    <div class="ui-g col-lg-12">
+                        <b>Subscriber Option</b>
+                    </div>
+                    <br>
+                    <div class="ui-g col-lg-12" style="margin-bottom:10px">
+                        <div class="ui-g-12">
+                            <p-checkbox name="group1" value="New York" label="Suppress local mobile data top-up option"
+                                inputId="ny"></p-checkbox>
+                        </div>
+                        <div class="ui-g-12">
+                            <p-checkbox name="group1" value="San Francisco"
+                                label="Suppress roaming mobile data top-up option" inputId="sf">
+                            </p-checkbox>
+                        </div>
+                        <div class="ui-g-12">
+                            <p-checkbox name="group1" value="Los Angeles" label="Suppress IDD0060 registration option"
+                                inputId="la">
+                            </p-checkbox>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="ui-g col-lg-12">
+                        <b>Local / Roaming Data Alert Setting</b>
+                    </div>
+                    <div class='col-lg-12 ui-g'>
+                        <div class="ui-g-4">
+                            <div class="text-muted">Alert Type</div>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="ui-g col-lg-12">
+                        <div class='ui-g-4'>
+                            <div class="text-muted">Email Address</div>
+                            <input class="form-control">
+                        </div>
+                        <div class='ui-g-4'>
+                            <br>
+                            <p-checkbox name="group1" value="Los Angeles" label="Same as Email Billing Address"
+                                inputId="la">
+                            </p-checkbox>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="ui-g col-lg-12">
+                        <div class='ui-g-4'>
+                            <div class="text-muted">SMS Alert Recipient</div>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class='ui-g-4'>
+                            <div class="text-muted">2nd Mobile Number</div>
+                            <input class="form-control">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="ui-g col-lg-12" style="margin-bottom:10px">
+                        <div class="ui-g-12">
+                            <p-checkbox name="group1" value="New York"
+                                label="Customer opt-out 1st data roaming usage reminder SMS" inputId="ny"></p-checkbox>
+                        </div>
+                        <div class="ui-g-12">
+                            <p-checkbox name="group1" value="San Francisco"
+                                label="Customer opt-out data roaming high usage alert SMS" inputId="sf">
+                            </p-checkbox>
+                        </div>
+
+                    </div>
+                </mat-tab>
+                <mat-tab label="Sales Configure" [disabled]="this.configType=='group'">
+                    <br>
+                    <div class='ui-g'>
+                        <div class="ui-g-4">
+                            <div class="text-muted">Expiry Strategy</div>
+                            <select class="form-control">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="ui-g">
+                        <div class="ui-g-4">
+                            <b>SIM Selection (HandsetSIM Slot: Nano)</b>
+                        </div>
+                    </div>
+                    <div class="ui-g">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>SIM Type</th>
+                                    <th>Charge Amt</th>
+                                    <th>Waive<br>Indicator</th>
+                                    <th>Vaive Reason</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let i of [1,2]">
+                                    <td width="25%"><input type="radio" value="nmn" name="simType">CU JOC CSL 64K
+                                        SIMTRIO-H(C)</td>
+                                    <td width="15%">$0</td>
+                                    <td width="10%">No</td>
+                                    <td></td>
+                                    <td><a>Edit</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </mat-tab>
+                <mat-tab label="Fulfillment Configure">
+                    <div class="panel-body" *ngIf="this.configType=='group'">
+                        <div class="text-muted">Send Top Up Alert to</div>
+                        <div class='row'>
+                            <div class='col-lg-3'>
+                                <select class="form-control">
+                                    <option value="1">Primary+Members</option>
+                                    <option value="2">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class='row col-lg-9'><label></label></div>
+
+                    </div>
+                    <div class="panel-body" *ngIf="this.configType!='group'">
+                        <div class='row'>
+                            <div class="col-lg-2">
+                                <label><input type="radio" value="nmn" name="numType" [(ngModel)]="numType">New Mobile
+                                    Number</label>
+                            </div>
+                            <div class="col-lg-2">
+                                <label><input type="radio" value="mnp" name="numType" [(ngModel)]="numType">MNP</label>
+                            </div>
+                        </div>
+                        <div class='row' #NMN *ngIf="numType=='nmn'">
+                            <div class='ui-g'>
+                                <br>
+                                <div class="col-lg-3">
+                                    <div><b>Service Request date</b></div>
+                                    <select class="form-control">
+                                        <option value="{{(today-60*60*24*1000)|date: 'ddMMyyyy'}}">
+                                            {{(today-60*60*24*1000)|date: 'dd MMM yyyy'}}</option>
+                                        <option value="{{(today-60*60*24*1000*2)|date: 'ddMMyyyy'}}">
+                                            {{(today-60*60*24*1000*2)|date: 'dd MMM yyyy'}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <div class='ui-g'>
+                                <div class='radio-button hidden-xs hidden-sm'>&nbsp;</div>
+                                <div class="col-lg-2">
+                                    <button class="btn btn-default" (click)="openDialog()">Select<br>Number</button>
+                                </div>
+                                <div class="col-lg-2">
+                                    <label><input type="checkbox" value="afterwards" name="afterwards">MNP
+                                        afterwards</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div #MNP *ngIf="numType=='mnp'">
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="text-muted">Cut over date</div>
+                                    <select class="form-control">
+                                        <option value="{{(today-60*60*24*1000)|date: 'ddMMyyyy'}}">
+                                            {{(today-60*60*24*1000)|date: 'dd MMM yyyy'}}</option>
+                                        <option value="{{(today-60*60*24*1000*2)|date: 'ddMMyyyy'}}">
+                                            {{(today-60*60*24*1000*2)|date: 'dd MMM yyyy'}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="text-muted">Cut over time</div>
+                                    <select class="form-control">
+                                        <option value="1200-1400">
+                                            12:00 - 14:00</option>
+                                        <option value="1400-1600">
+                                            14:00 - 16:00</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <b>Number Information</b>
+                                </div>
+                            </div>
+                            <br>
+                            <div class='row'>
+                                <div class="col-lg-4">
+                                    <div class="text-muted">Number to transfer</div>
+                                    <input class="form-control" type="text">
+
+                                </div>
+                                <div class="col-lg-1">
+                                    <div class="text-muted">&nbsp;</div>
+                                    <button class="btn btn-default">Check</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="text-muted">Ticket No.</div>
+                                    <input class="form-control" type="text" value="124432" disabled>
+                                </div>
+                            </div>
+                            <br>
+                            <div class='row'>
+                                <div class="col-lg-4">
+                                    <div class="text-muted">
+                                        Old Customer Name
+                                        <label style="margin-bottom:0px"><input type="checkbox" value="PrepaidSIM"
+                                                name="afterwards">Prepaid SIM</label>
+                                    </div>
+                                    <input class="form-control" type="text">
+
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="text-muted">Old Customer Document No / Prepaid SIM No.</div>
+                                    <input class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</div>
+<div class='row col-lg-12' style="text-align: right">
+    <button class="btn btn-primary" (click)="confirm()">Close</button>
+</div>

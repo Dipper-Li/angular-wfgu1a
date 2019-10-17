@@ -1,0 +1,48 @@
+<div class="panel-body">
+    <div class='row'>
+        <div class='col-sm-12'><b>New Number Selection</b></div>
+        <div class='radio-button hidden-xs hidden-sm'>&nbsp;</div>
+    </div>
+    <div class='row'>
+        <div class='col-sm-2'>
+            <div class="text-muted">&nbsp;</div>
+            <input type="radio" name="numTypae" value="random"> Random
+
+        </div>
+        <div class='col-sm-2'>
+            <div class="text-muted">&nbsp;</div>
+            <input type="radio" name="numTypae" value="pattern"> Pattern
+        </div>
+        <div class='col-sm-4'>
+            <div class="text-muted">&nbsp;</div>
+            <input class="form-control">
+        </div>
+        <div class='col-sm-4'>
+            <div class="text-muted">Product Line</div>
+            <select class="form-control">
+                <option name="grade" value="a">Golden A</option>
+                <option name="grade" value="b">Golden B</option>
+            </select>
+
+        </div>
+
+    </div>
+    <br>
+    <div class='row'>
+        <div class='col-sm-12' style="text-align:right">
+            <button class="btn btn-default" (click)="getNumList()">Search</button>
+            <button class="btn btn-default" (click)="getNumList()">Clear</button>
+        </div>
+    </div>
+    <br>
+    <div class='row'>
+        <div class='col-sm-4'>
+            <select class="form-control" [(ngModel)]="selectedNum">
+                <option *ngFor="let number of numberList" [value]="number">{{number}}</option>
+            </select>
+        </div>
+        <div class='col-sm-8' style="text-align: right">
+            <button class="btn btn-primary" mat-button [mat-dialog-close]="selectedNum" cdkFocusInitial>Ok</button>
+        </div>
+    </div>
+</div>

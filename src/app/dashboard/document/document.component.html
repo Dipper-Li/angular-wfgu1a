@@ -1,0 +1,66 @@
+<div class="panel-body">
+    <div class='row'>
+        <div class='col-lg-12'>
+            <b>Supporting Document Required</b>
+        </div>
+    </div>
+    <div class='row'>
+        <br>
+        <div class='col-lg-12'>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Document Type</th>
+                        <th>Reference</th>
+                        <th>Action</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of [1,2]">
+                        <td>Sim Card</td>
+                        <td>C-SIM</td>
+                        <td><a>Capture</a></td>
+                        <td><a>PC Upload</a></td>
+                        <td><a>Send Request to Email</a></td>
+                        <td><a>Send Request to SMS</a></td>
+                        <td><a>Send Request to MyHKT APP</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class='row'>
+        <br><br>
+        <div class='col-lg-12'>
+            <b>Form Generation</b>
+        </div>
+    </div>
+    <div class='row'>
+        <br>
+        <div class='col-lg-12'>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Document Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of [1,2]">
+                        <td><a>Application Form</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="panel-body">
+    <div class='row'>
+        <div class='col-lg-12' style="text-align: right">
+            <button class="btn btn-primary" (click)="next()">Next</button>
+        </div>
+    </div>
+</div>

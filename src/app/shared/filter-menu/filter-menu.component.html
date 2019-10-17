@@ -1,0 +1,25 @@
+<!-- <app-expansion-menu (choose)="addFilter($event)"
+    [category]="{head:{key:'1',value:'Plan'},items:[{key:'1',value:'SIM only (200)'},{key:'2',value:'SIM + Standalone (300)'},{key:'3',value:'SIM + Coupon (231)'},{key:'4',value:'SIM + Handset (132)'}]}">
+</app-expansion-menu>
+<app-expansion-menu
+    [category]="{head:{key:'2',value:'Brand'},items:[{key:'5',value:'CSL (431)'},{key:'6',value:'1O1O (312)'}]}">
+</app-expansion-menu>
+<app-expansion-menu
+    [category]="{head:{key:'3',value:'MUP'},items:[{key:'7',value:'Yes (431)'},{key:'8',value:'No (312)'}]}">
+</app-expansion-menu> -->
+<div *ngIf="criteria.length!=0">
+    <div>
+        Selected by
+    </div>
+    <br>
+    <div *ngFor="let c of criteria"><a class="menu-link" (click)="removeSearchCriteria(c)">X</a>&nbsp;<b>{{c.head.label}}</b>: <font class="text-muted">{{c.item.label}}</font></div>
+</div>
+<br>
+<div>
+    Filter By
+</div>
+<br>
+<div *ngFor="let categorie of categories">
+    <app-expansion-menu *ngIf="categorie.isShow" (choose)="addSearchCriteria($event)" [category]="categorie">
+    </app-expansion-menu>
+</div>

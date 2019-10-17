@@ -1,0 +1,74 @@
+.btn-new {
+    border-radius: 10px;
+    color: white;
+    background-color: #398eda;
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 10px;
+}
+
+.btn-sale {
+    border-radius: 10px;
+    color: white;
+    background-color: #f45555;
+    margin-left: 55px;
+    margin-top: -10px;
+    position: absolute
+}
+
+.rating-star {
+    padding: 0px 8.5px;
+    width: 12px;
+    height: 12px;
+    background-image: url(/assets/image/product-item-rating-icon.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle
+}
+
+.fill {
+    background-image: url(/assets/image/product-item-rating-filled-icon.png);
+}
+
+ul {
+    border: 0
+}
+
+li {
+    border: 0;
+    padding: 0px 15px
+}
+
+.contract {
+    color: #ea1b76
+}
+
+.discount {
+    text-decoration: line-through
+}
+
+.addto {
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 1.1px;
+    color: #4a4a4a;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px 5px 10px 25px;
+    text-align: center;
+    background-image: url(/assets/image/product-item-add-to-cart-icon.png);
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+    background-position: 8px center;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .2);
+    margin-top: 10px;
+    cursor: pointer;
+    outline: none
+}

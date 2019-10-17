@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-lg-3">
+        <app-product [product]="product" [showBtn]="false"></app-product>
+    </div>
+    <div class="col-lg-9">
+        <div class="row">
+            <div class="col-lg-3" style="margin-top:9px">
+                <span style="margin-top:-300px">Contract Period</span>
+            </div>
+            <div>
+                <p-dropdown [(ngModel)]="contractPeriod" [options]="contractPeriodList" [style]="{'width':'400px'}"></p-dropdown>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-3" style="margin-top:9px">
+                <span style="margin-top:-300px">Internal Storage</span>
+            </div>
+            <div>
+                <p-dropdown [(ngModel)]="internalStorage" [options]="internalStorageList" [style]="{'width':'400px'}"></p-dropdown>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-3" style="margin-top:9px">
+                <span style="margin-top:-300px">Color</span>
+            </div>
+            <div>
+                <p-dropdown [(ngModel)]="color" [options]="colorList" [style]="{'width':'400px'}"></p-dropdown>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12" style="margin-top:9px">114.9 Clubpoints wiil be earned</div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-9" style="margin-top:9px">
+            </div>
+            <div class="col-lg-3" style="margin-top:9px">
+                <button class="btn btn-default" mat-button [mat-dialog-close]="product" (click)="updateProduct()" cdkFocusInitial>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,391 @@
+<mat-tab-group>
+    <mat-tab label="Customer Info">
+        <div class="panel-body">
+            <div class='row'>
+                <div class='col-lg-12'>
+                    <b>Customer Details</b>
+                </div>
+            </div>
+            <br>
+            <div class='row'>
+                <div class='col-lg-3'>
+                    <div class='col-lg-6'>
+                        <label class="radio-inline">
+                            <input type="radio" name="usage" value="individual" checked> Individual
+                        </label>
+                    </div>
+                    <div class='col-lg-6'>
+                        <label class="radio-inline">
+                            <input type="radio" name="usage" value="commercial"> Commercial
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <div class='row'>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Document Type</div>
+                    <select class="form-control" disabled>
+                        <option value=''>Pls Select</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                    </select>
+                </div>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Document No. </div>
+                    <input class="form-control" disabled>
+                </div>
+                <div class='col-lg-4' disabled>
+                    <div class="text-muted">Date of Birth</div>
+                    <select class="form-control">
+                        <option value=''>Pls Select</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class='row'>
+                <div class='col-lg-4' disabled>
+                    <div class="text-muted">Title</div>
+                    <select class="form-control">
+                        <option value=''>Pls Select</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                    </select>
+                </div>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Family Name</div>
+                    <input class="form-control" disabled>
+                </div>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Given Name</div>
+                    <input class="form-control" disabled>
+                </div>
+            </div>
+            <br>
+            <div class='row'>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Contact Mobile No.</div>
+                    <input class="form-control">
+                </div>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Contact Fixed Line No.</div>
+                    <input class="form-control" disabled>
+                </div>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Contact Email Address</div>
+                    <input class="form-control" disabled>
+                </div>
+            </div>
+            <br>
+            <div class='row'>
+                <div class='col-lg-8'>
+                    <div class="text-muted">Registered Address</div>
+                    <input class="form-control">
+                </div>
+                <div class='col-lg-4'>
+                    <div class="text-muted">&nbsp;</div>
+                    <button class="btn btn-primary">Address Input</button>
+                    <input style="margin-left: 10px" type="checkbox" value="afterwards" name="afterwards">No Address
+                    Proof
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-4' disabled>
+                    <div class="text-muted">Language</div>
+                    <select class="form-control">
+                        <option value=''>Pls Select</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                    </select>
+                </div>
+            </div>
+            <div class='row'>
+                <br><br>
+                <div class='col-lg-11'>
+                    <b>Related Registration</b>
+                </div>
+                <div class='col-lg-1'>
+                    <button class="btn btn-default" (click)="add()">Add</button>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="50%">Registration</th>
+                                <th width="50%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of [1,2]">
+                                <td width="25%">MyHKT</td>
+                                <td><a>Remove</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <b>Billing Information</b>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <label><input type="checkbox" value="afterwards" name="correspondence ">Correspondence / Billing
+                        address is same as registered address</label>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <div class="text-muted" style="padding-bottom: 5px">Bill Medium</div>
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-lg-2'>
+                    <label style="margin-right:80px"><input type="checkbox" value="afterwards"
+                            name="billMedium">SMS</label>
+                </div>
+                <div class='col-lg-2'>
+
+                    <label style="margin-right:80px"><input type="checkbox" value="afterwards"
+                            name="billMedium">Email</label>
+
+                </div>
+                <div class='col-lg-2'>
+                    <label style="margin-right:80px"><input type="checkbox" value="afterwards"
+                            name="billMedium">Paper</label>
+                </div>
+            </div>
+            <div class='row'>
+                <br><br>
+                <div class='col-lg-12'>
+                    <b>Paper Bill Change Information</b>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="25%">Charge Type</th>
+                                <th width="15%">Charge Amt</th>
+                                <th width="10%">Waive Indicator</th>
+                                <th width="35%">Waive Reason</th>
+                                <th width="15%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of [1,2]">
+                                <td>Paper Summary Recurring</td>
+                                <td>$10</td>
+                                <td>No</td>
+                                <td></td>
+                                <td><a>Edit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-4' disabled>
+                    <div class="text-muted mandatory">Bill Language</div>
+                    <select class="form-control">
+                        <option value=''>Pls Select</option>
+                        <option value='1'>Bilingual</option>
+                        <option value='2'>Chinese</option>
+                        <option value='3'>English</option>
+                        <option value='4'>Japanese</option>
+                    </select>
+                </div>
+            </div>
+            <div class='row'>
+                <br><br>
+                <div class='col-lg-12'>
+                    <b>Personal Information Collection Statement</b>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <label><input type="checkbox" value="afterwards" name="receiveAggrement ">Don't want to receive any
+                        promotional gifts, discounts, offers or materials</label>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Sales Configure" [disabled]="this.configType=='group'">
+        <div class="panel-body">
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <b>Payment Method</b>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <label><input type="checkbox" value="afterwards" name="correspondence ">New Account</label>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <button class="btn" style="padding-top:0px;padding-bottom:0px;margin-top: -3.5px;margin-left: 3px" disabled>
+                        Choose from existing<br>payment method
+                    </button>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-2'>
+                    <label class="radio-inline">
+                        <input type="radio" name="payment" value="individual" checked> Credit Card
+                    </label>
+                </div>
+                <div class='col-lg-2'>
+                    <label class="radio-inline">
+                        <input type="radio" name="payment" value="commercial"> Cash
+                    </label>
+                </div>
+                <div class='col-lg-2'>
+                    <label class="radio-inline">
+                        <input type="radio" name="payment" value="individual"> Direct Debit
+                    </label>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-3'>
+                    <div class="text-muted">Card Holder Name</div>
+                    <input class="form-control">
+                </div>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Card Holder Document Type</div>
+                    <select class="form-control">
+                        <option value=''>Pls Select</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                    </select>
+                </div>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Card Holder Document No.</div>
+                    <input class="form-control">
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Credit Card Type</div>
+                    <select class="form-control">
+                        <option value=''>Pls Select</option>
+                        <option value='1'>1</option>
+                        <option value='2'>2</option>
+                        <option value='3'>3</option>
+                        <option value='4'>4</option>
+                    </select>
+                </div>
+                <div class='col-lg-4'>
+                    <div class="text-muted">Credit Card No.</div>
+                    <input class="form-control">
+                </div>
+                <div class='col-lg-3'>
+                    <div>&nbsp;</div>
+                    <button class="btn btn-primary">Capture</button>
+                </div>
+            </div>
+            <div class='row'>
+                <br><br>
+                <div class='col-lg-12'>
+                    <b>Upfront Payment Information</b>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="30%">Item</th>
+                                <th width="10%">Charge Amt</th>
+                                <th width="10%">Waive Indicator</th>
+                                <th width="40%">Waive Reason</th>
+                                <th width="10%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of [1,2,3]">
+                                <td>Apple iPhone X 256GB (White)</td>
+                                <td>$8299</td>
+                                <td>No</td>
+                                <td></td>
+                                <td><a>Edit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class='row'>
+                <br><br>
+                <div class='col-lg-12'>
+                    <b>Deposit Information</b>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="30%">Item</th>
+                                <th width="10%">Charge Amt</th>
+                                <th width="10%">Waive Indicator</th>
+                                <th width="40%">Waive Reason</th>
+                                <th width="10%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of [1,2,3]">
+                                <td>Non HKID Card Holder Deposit</td>
+                                <td>$1000</td>
+                                <td>No</td>
+                                <td></td>
+                                <td><a>Edit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </mat-tab>
+</mat-tab-group>
+<div class="panel-body">
+    <div class='row'>
+        <br>
+        <div class='col-lg-12' style="text-align: right">
+            <button class="btn btn-primary" (click)="next()">Next</button>
+        </div>
+    </div>
+</div>

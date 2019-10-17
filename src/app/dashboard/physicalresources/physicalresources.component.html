@@ -1,0 +1,418 @@
+<div class="panel-body">
+    <div class='row'>
+        <div class='col-lg-12'>
+            <b>Resource Stock Balance</b>
+        </div>
+    </div>
+    <div class='row'>
+        <br>
+        <div class='col-lg-12'>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Resource Type</th>
+                        <th>Resource Name</th>
+                        <th>SKU Code</th>
+                        <th>SKU Name</th>
+                        <th>Available Stock Qty</th>
+                        <th>Required Stock Qty</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let i of [1,2]">
+                        <td>Sim Card</td>
+                        <td>C-SIM</td>
+                        <td>2100141</td>
+                        <td>CSL 64K USIM SIMTRIO</td>
+                        <td>1204</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class='row'>
+        <br>
+        <div class='col-lg-2'>
+            <label class="radio-inline">
+                <input type="radio" name="pickup" value="delivery" [(ngModel)]="pickup" checked> Delivery
+            </label>
+        </div>
+        <div class='col-lg-2'>
+            <label class="radio-inline">
+                <input type="radio" name="pickup" value="upfront" [(ngModel)]="pickup"> Upfront Pick up
+            </label>
+        </div>
+        <div class='col-lg-2'>
+            <label class="radio-inline">
+                <input type="radio" name="pickup" value="installation" [(ngModel)]="pickup" disabled> Installation
+            </label>
+        </div>
+        <div class='col-lg-2'>
+            <label class="radio-inline">
+                <input type="radio" name="pickup" value="shop" [(ngModel)]="pickup"> Pick up at Shop
+            </label>
+        </div>
+    </div>
+    <div *ngIf="pickup=='delivery'">
+        <div class='row'>
+            <br><br>
+            <div class='col-lg-12'>
+                <b>Delivery Details</b>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tracking Number</th>
+                            <th>Status</th>
+                            <th>SKU Code</th>
+                            <th>SKU Name</th>
+                            <th>ICCID / IMEI</th>
+                            <th>Action</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of [1,2]">
+                            <td></td>
+                            <td>To Deliver</td>
+                            <td>2100141</td>
+                            <td>CSL 64K USIM SIMTRIO</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <b>Delivery Contact Details</b>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <label><input type="checkbox" value="afterwards" name="correspondence ">New Delivery Contact</label>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <button class="btn" style="padding-top:0px;padding-bottom:0px;margin-top: -3.5px;margin-left: 3px"
+                    disabled>
+                    Choose from existing<br>delivery contact person
+                </button>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-4'>
+                <div class="text-muted">Title</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Family Name</div>
+                <input class="form-control">
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Given Name</div>
+                <input class="form-control">
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-4'>
+                <div class="text-muted">Contact Mobile No.</div>
+                <input class="form-control">
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Second Contact No.</div>
+                <input class="form-control">
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <b>Delivery Address</b>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <label><input type="checkbox" value="afterwards" name="correspondence "> New Delivery Address</label>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <button class="btn" style="padding-top:0px;padding-bottom:0px;margin-top: -3.5px;margin-left: 3px"
+                    disabled>
+                    Choose from existing<br>delivery contact person
+                </button>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-2'>
+                <label class="radio-inline">
+                    <input type="radio" name="payment" value="individual" checked> Fixed format
+                </label>
+            </div>
+            <div class='col-lg-2'>
+                <label class="radio-inline">
+                    <input type="radio" name="payment" value="commercial"> Free format
+                </label>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-6'>
+                <div class="text-muted">Quick Search</div>
+                <input class="form-control">
+            </div>
+            <div class='col-lg-2'>
+                <div>&nbsp;</div>
+                <button class="btn" style="padding-top:0px;padding-bottom:0px;margin-top: -3.5px;margin-left: 3px">
+                    Search<br>from MAP
+                </button>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-4'>
+                <div class="text-muted">Flat</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Floor</div>
+                <input class="form-control">
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-4'>
+                <div class="text-muted">Block</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Building</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-4'>
+                <div class="text-muted">Street No.</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Street Name</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-4'>
+                <div class="text-muted">District</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Area</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-4'>
+                <input type="checkbox" value="afterwards" name="afterwards">Urgent Delivery
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-4'>
+                <div class="text-muted">Delivery Date</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Delivery Time</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="pickup=='upfront'">
+        <br>
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <b>Pickup Details</b>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Service No.</th>
+                            <th>Status</th>
+                            <th>SKU Code</th>
+                            <th>SKU Name</th>
+                            <th>ICCID / IMEI</th>
+                            <th>Action</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of [1,2]">
+                            <td>91111111</td>
+                            <td>To Deliver</td>
+                            <td>2100141</td>
+                            <td>CSL 64K USIM SIMTRIO</td>
+                            <td style="padding:3px"><input class="form-control" value="8985200092181001331"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="pickup=='shop'">
+        <br>
+        <div class='row'>
+            <div class='col-lg-4'>
+                <div class="text-muted">Shop Selection</div>
+                <select class="form-control">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>MKK</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+            <div class='col-lg-5'>
+                <div class="text-muted">Shop Location</div>
+                <input class="form-control" value="Block C, Lucky Garden, Wealthy Street, Mongkok, Kowloon" disabled>
+            </div>
+            <div class='col-lg-2'>
+                <div>&nbsp;</div>
+                <button class="btn" style="padding-top:0px;padding-bottom:0px;margin-top: -3.5px;margin-left: 3px"
+                    disabled>
+                    Search<br>from MAP
+                </button>
+            </div>
+        </div>
+
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <b>Pickup Details</b>
+            </div>
+        </div>
+        <div class='row'>
+            <br>
+            <div class='col-lg-12'>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Service No.</th>
+                            <th>Status</th>
+                            <th>SKU Code</th>
+                            <th>SKU Name</th>
+                            <th>ICCID / IMEI</th>
+                            <th>Action</th>
+                            <th>Reason</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of [1,2]">
+                            <td>91111111</td>
+                            <td>To Deliver</td>
+                            <td>2100141</td>
+                            <td>CSL 64K USIM SIMTRIO</td>
+                            <td style="padding:3px"><input class="form-control"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel-body">
+    <div class='row'>
+        <br>
+        <div class='col-lg-12' style="text-align: right">
+            <button class="btn btn-primary" (click)="next()">Next</button>
+        </div>
+    </div>
+</div>
