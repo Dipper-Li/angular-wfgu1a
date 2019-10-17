@@ -19,8 +19,10 @@ import { PhysicalresourcesComponent } from './physicalresources/physicalresource
 import { DocumentComponent } from './document/document.component';
 import { SummaryComponent } from './summary/summary.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {SnackBarComponentExample} from './snack-bar-component-example';
 @NgModule({
-  declarations: [DashboardComponent, OfferselectionComponent,BasicinfoComponent, ConfigComponent, PaymentComponent, PhysicalresourcesComponent, DocumentComponent, SummaryComponent ],
+  declarations: [DashboardComponent, OfferselectionComponent,BasicinfoComponent, ConfigComponent, PaymentComponent, PhysicalresourcesComponent, DocumentComponent, SummaryComponent, SnackBarComponentExample,
+     ],
   imports: [
     DashboardRoutingModule,
     CommonModule,
@@ -35,6 +37,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     
     ReactiveFormsModule
   ],
+   entryComponents:[SnackBarComponentExample],
   exports:[DashboardComponent]
 })
 export class DashboardModule { }

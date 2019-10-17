@@ -33,7 +33,7 @@ import { FilterMenuComponent } from './filter-menu/filter-menu.component';
     MatRadioModule,
     MatSelectModule
   ],
-  entryComponents: [ AddToCartComponent, NumberSelectorComponent, MembersNumComponent ],
+  entryComponents: [ AddToCartComponent, NumberSelectorComponent, MembersNumComponent, ProductComponent ],
   exports:[BubbleComponent, ProductComponent, ExpansionMenuComponent, ShoppingCartComponent, FilterMenuComponent ]
 })
 export class ShareModule { }

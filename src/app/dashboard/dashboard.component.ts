@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd, NavigationStart, RouterEvent } from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import {MatSnackBar} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -11,10 +12,14 @@ export class DashboardComponent implements OnInit {
 
   items;
   activeIndex: number = 0;
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute,private _snackBar: MatSnackBar) {
 
   }
-
+openSnackBar() {
+    this._snackBar.open('test','', {
+      duration: 1500,
+    });
+  }
   ngOnInit() {
     this.activeIndex = this.route.firstChild.snapshot.data['activeIndex'];
     let t = this.router.events.pipe(filter((event:RouterEvent): event is NavigationEnd =>event instanceof NavigationEnd));

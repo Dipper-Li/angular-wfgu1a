@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppCommon } from './app.common';
-//import * as $ from 'jquery';
+import * as $ from 'jquery';
 
 
 
@@ -29,6 +29,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
+
+    
     // OfferSelectionComponent,
     // ConfigureComponent,
     // ShoppingCartComponent,
@@ -58,7 +60,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AppRoutingModule,
   ],
   providers: [AppCommon],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+ 
 })
 export class AppModule { 
 

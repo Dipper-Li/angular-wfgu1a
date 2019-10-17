@@ -1,7 +1,7 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ShoppingCartService } from '../../service/shopping-cart.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-offerselection',
@@ -17,7 +17,7 @@ export class OfferselectionComponent implements OnInit {
   id:any;
   categories:any;
   test;
-  constructor(private router: Router, private shoppingCartService:ShoppingCartService, private route: ActivatedRoute, public _snackBar: MatSnackBar) { 
+  constructor(private router: Router, private shoppingCartService:ShoppingCartService, private route: ActivatedRoute, private _snackBar: MatSnackBar) { 
     this.product = {
       type:"offer",
       price:120,
