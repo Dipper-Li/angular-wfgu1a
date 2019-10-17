@@ -18,7 +18,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { PhysicalresourcesComponent } from './physicalresources/physicalresources.component';
 import { DocumentComponent } from './document/document.component';
 import { SummaryComponent } from './summary/summary.component';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [DashboardComponent, OfferselectionComponent,BasicinfoComponent, ConfigComponent, PaymentComponent, PhysicalresourcesComponent, DocumentComponent, SummaryComponent ],
   imports: [
@@ -32,6 +32,7 @@ import { SummaryComponent } from './summary/summary.component';
     CheckboxModule,
     FormsModule,
     StepsModule,
+    
     ReactiveFormsModule
   ],
   exports:[DashboardComponent]

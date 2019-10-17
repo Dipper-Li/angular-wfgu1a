@@ -17,7 +17,7 @@ export class OfferselectionComponent implements OnInit {
   id:any;
   categories:any;
   test;
-  constructor(private router: Router, private shoppingCartService:ShoppingCartService, private route: ActivatedRoute, private _snackBar: MatSnackBar) { 
+  constructor(private router: Router, private shoppingCartService:ShoppingCartService, private route: ActivatedRoute, public _snackBar: MatSnackBar) { 
     this.product = {
       type:"offer",
       price:120,

@@ -16,7 +16,7 @@ import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppCommon } from './app.common';
-import * as $ from 'jquery';
+//import * as $ from 'jquery';
 
 
 
