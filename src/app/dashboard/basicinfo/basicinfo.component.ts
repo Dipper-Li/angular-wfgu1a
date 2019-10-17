@@ -61,13 +61,13 @@ export class BasicinfoComponent implements OnInit {
     //this.basicInfo = this.shoppingCartService.getBasicInfo();
     console.log('this.basicInfo:',this.basicInfo);
     this.basicInfo.patchValue(this.shoppingCartService.getBasicInfo());
-    this.http.get('http://localhost:8080/getHerosa',{observe:'response'}).pipe(
-      catchError(this.t)
-    ).subscribe((data)=>{
-    console.log('data:',data);
-    },error=>{
-      console.error('error:',error);
-    });
+    // this.http.get('http://localhost:8080/getHerosa',{observe:'response'}).pipe(
+    //   catchError(this.t)
+    // ).subscribe((data)=>{
+    // console.log('data:',data);
+    // },error=>{
+    //   console.error('error:',error);
+    // });
   }
   t(error: HttpErrorResponse){console.log('error2:',error);return throwError(
     'Something bad happened; please try again later.');}

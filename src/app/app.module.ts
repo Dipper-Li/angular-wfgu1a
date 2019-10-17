@@ -1,4 +1,4 @@
-import { TestComponent } from './test/test.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
@@ -23,7 +23,6 @@ import * as $ from 'jquery';
 import { DashboardModule } from './dashboard/dashboard.module';
 
 import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
-import { TestRoutingModule } from './test/test-routing.module';
 import { ShareModule } from './shared/share.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
