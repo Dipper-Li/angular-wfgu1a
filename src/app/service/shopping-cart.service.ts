@@ -1,4 +1,4 @@
-import { AppCommon } from '../../app.common';
+import { AppCommon } from '../app.common';
 import { Injectable, SimpleChanges } from '@angular/core';
 
 
