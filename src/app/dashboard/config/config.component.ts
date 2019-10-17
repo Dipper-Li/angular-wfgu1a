@@ -1,10 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { ShoppingCartService } from 'src/app/service/shopping-cart.service';
-import { NumberSelectorComponent } from 'src/app/shared/number-selector/number-selector.component';
-import { AppCommon } from 'src/app/app.common';
-import { MembersNumComponent } from 'src/app/shared/members-num/members-num.component';
+import { ShoppingCartService } from '../../service/shopping-cart.service';
+import { NumberSelectorComponent } from '../../shared/number-selector/number-selector.component';
+import { AppCommon } from '../../app.common';
+import { MembersNumComponent } from '../../shared/members-num/members-num.component';
 import { switchMap } from 'rxjs/operators';
 import { isNullOrUndefined } from 'util';
 @Component({

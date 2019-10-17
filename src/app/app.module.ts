@@ -18,7 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppCommon } from './app.common';
 import * as $ from 'jquery';
 
-import { TestModule } from './test/test.module';
+
 
 import { DashboardModule } from './dashboard/dashboard.module';
 
@@ -26,7 +26,7 @@ import { DashboardRoutingModule } from './dashboard/dashboard-routing.module';
 import { TestRoutingModule } from './test/test-routing.module';
 import { ShareModule } from './shared/share.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-//import { TestModule } from './test/test.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,10 +49,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatRadioModule,
     MatSelectModule,
     //SalesOfferModule,
-    TestModule,
+
     DashboardModule,
     DashboardRoutingModule,
-    TestRoutingModule ,
     ShareModule,
     MatIconModule,
     MatSidenavModule,
@@ -63,5 +62,5 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   bootstrap: [AppComponent]
 })
 export class AppModule { 
-  test ='test'; 
+
 }

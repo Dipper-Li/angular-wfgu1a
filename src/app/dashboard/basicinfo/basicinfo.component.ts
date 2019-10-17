@@ -3,7 +3,7 @@ import { throwError } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ShoppingCartService } from 'src/app/service/shopping-cart.service';
+import { ShoppingCartService } from '../../service/shopping-cart.service';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-basicinfo',
