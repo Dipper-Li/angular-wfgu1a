@@ -1,0 +1,136 @@
+<form [formGroup]="basicInfo" (ngSubmit)="next()">
+    <div class="panel-body">
+        <div class='row form-group'>
+            <div class='col-lg-12'>
+                <b>Order Information</b>
+            </div>
+        </div>
+        <div class='row form-group'>
+            <div class='col-lg-4'>
+                <div class="text-muted">Order No</div>
+                <input class="form-control" formControlName="orderNo">
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Order Nature</div>
+                <input class="form-control" formControlName="orderNature">
+            </div>
+        </div>
+        
+        <div class='row form-group'>
+            <div class='col-lg-12'>
+                <b>Customer Information</b>
+            </div>
+        </div>
+        
+        <div class='row form-group'>
+            <div class='col-lg-3'>
+                <div class='col-lg-6'>
+                    <label class="radio-inline">
+                        <input type="radio" name="usage" value="individual" checked
+                            formControlName="usage"> Individual
+                    </label>
+                </div>
+                <div class='col-lg-6'>
+                    <label class="radio-inline">
+                        <input type="radio" name="usage" value="commercial"
+                            formControlName="usage"> Commercial
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        <div class='row form-group'>
+            <div class='col-lg-4'>
+                <div class="text-muted">Document Type</div>
+                <select class="form-control" formControlName="documentType">
+                    <option value=''>Pls Select</option>
+                    <option value='1'>1</option>
+                    <option value='2'>2</option>
+                    <option value='3'>3</option>
+                    <option value='4'>4</option>
+                </select>
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Document No.</div>
+                <input class="form-control" formControlName="documentNum">
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Customer Name</div>
+                <input class="form-control" formControlName="customerName">
+            </div>
+        </div>
+        
+        <div class='row form-group'>
+            <div class='col-lg-4'>
+                <div class="text-muted">Contact Mobile No.</div>
+                <select class="form-control" style="display: inline;width: 20%"
+                    formControlName="prefix">
+                    <option value='852'>852</option>
+                    <option value='853'>853</option>
+                    <option value='86'>86</option>
+                    <option value='81'>81</option>
+                </select>
+                <input class="form-control" style="margin-left:5px;display: inline;width: 78.8%"
+                    formControlName="num">
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Contact Fixed Line No.</div>
+                <input class="form-control" formControlName="contactFixedLineNum">
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Contact Email Address</div>
+                <input class="form-control" formControlName="contactEmailAddress">
+            </div>
+        </div>
+        
+        <div class='row form-group'>
+            <div class='col-lg-4'>
+                <div class="text-muted">Club Membership ID</div>
+                <input class="form-control" formControlName="clubMembershipId">
+            </div>
+
+        </div>
+        
+        <div class='row form-group'>
+            <div class='col-lg-12'>
+                <b>Sales Information</b>
+            </div>
+        </div>
+        
+        
+        <div class='row form-group'>
+            <div class='col-lg-4'>
+                <div class="text-muted">Staff No.</div>
+                <input class="form-control" formControlName="staffNum">
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Staff Name</div>
+                <input class="form-control" formControlName="staffName">
+            </div>
+        </div>
+        
+        <div class='row form-group'>
+            <div class='col-lg-4'>
+                <div class="text-muted">Contact No.</div>
+                <input class="form-control" formControlName="contactNum">
+            </div>
+        </div>
+        
+        <div class='row form-group'>
+            <div class='col-lg-4'>
+                <div class="text-muted">Referrer</div>
+                <input class="form-control" formControlName="referrer">
+            </div>
+            <div class='col-lg-4'>
+                <div class="text-muted">Referrer Name</div>
+                <input class="form-control" formControlName="referrerName">
+            </div>
+        </div>
+        <div class="row">
+            <div class='col-lg-11'></div>
+            <div class='col-lg-1'>
+                <button type="submit" class="btn btn-primary" (click)="next()">Next</button>
+            </div>
+        </div>
+    </div>
+</form>
