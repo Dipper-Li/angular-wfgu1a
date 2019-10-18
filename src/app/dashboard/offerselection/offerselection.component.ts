@@ -2,13 +2,14 @@ import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ShoppingCartService } from '../../service/shopping-cart.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
-
+import * as picture from '../../service/pic';
 @Component({
   selector: 'app-offerselection',
   templateUrl: './offerselection.component.html',
   styleUrls: ['./offerselection.component.css']
 })
 export class OfferselectionComponent implements OnInit {
+  pic = picture;
   criteria = [];
   basicFilter:any;
   product:any;
@@ -18,6 +19,7 @@ export class OfferselectionComponent implements OnInit {
   categories:any;
   test;
   constructor(private router: Router, private shoppingCartService:ShoppingCartService, private route: ActivatedRoute, private _snackBar: MatSnackBar) { 
+    window.scroll(0,0);
     this.product = {
       type:"offer",
       price:120,
