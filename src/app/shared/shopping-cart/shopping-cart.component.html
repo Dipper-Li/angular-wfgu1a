@@ -1,4 +1,5 @@
-<img src="https://raw.githubusercontent.com/Dipper-Li/angular-wfgu1a/master/src/assets/image/shopping-cart.png?token=AMSTRUOVHFTHRHJ3IV776DS5VA22U" width="40px" height="40px" (click)="op1.toggle($event);getUpfrontTotal()">
+
+<img [src]="pic.shopping_cart" width="40px" height="40px" (click)="op1.toggle($event);getUpfrontTotal()">
 <app-bubble [text]="this.shoppingCartService.getCount()"></app-bubble>
 <p-overlayPanel #op1 styleClass="padding-0" [style]="{'width':'700px'}">
     <mat-card style="border-radius:0px">
@@ -10,13 +11,13 @@
                 <b *ngIf="sub.product.mup">({{sub.groupDesc}}) {{sub.groupName}}</b>
             </div>
             <div class="col-lg-5" style="text-align:right">
-                <img src="/assets/image/group.png" *ngIf="sub.product.mup" (click)="config(sub.id,'group');op1.hide()"
+                <img [src]="pic.group" *ngIf="sub.product.mup" (click)="config(sub.id,'group');op1.hide()"
                     class="btn-cart">
-                <img src="/assets/image/config.png" (click)="config(sub.id);op1.hide()" class="btn-cart">
-                <img src="/assets/image/vas.png" (click)="vas(sub.id);op1.hide()" class="btn-cart">
-                <img src="/assets/image/gift.png" class="btn-cart">
-                <img src="/assets/image/remove.png" (click)="remove(sub.id)" class="btn-cart">
-                <img src="/assets/image/change.png" class="btn-cart">
+                <img [src]="pic.config" (click)="config(sub.id);op1.hide()" class="btn-cart">
+                <img [src]="pic.vas" (click)="vas(sub.id);op1.hide()" class="btn-cart">
+                <img [src]="pic.gift" class="btn-cart">
+                <img [src]="pic.remove" (click)="remove(sub.id)" class="btn-cart">
+                <img [src]="pic.change" class="btn-cart">
             </div>
         </div>
         <div class="row">
@@ -32,9 +33,9 @@
                         <div>Speed data package 10GB</div>
                     </div>
                     <div class="col-lg-5" style="text-align:right">        
-                        <img src="/assets/image/remove.png" (click)="removeVas(vas.id)"
+                        <img [src]="pic.remove" (click)="removeVas(vas.id)"
                             class="btn-cart">
-                        <img src="/assets/image/change.png" class="btn-cart">
+                        <img [src]="pic.change" class="btn-cart">
                     </div>
                 </div>
             </mat-card>
@@ -47,10 +48,10 @@
                         <b>({{gs.desc}}) {{gs.value}}</b>
                     </div>
                     <div class="col-lg-5" style="text-align:right">
-                        <img src="/assets/image/config.png" (click)="config(sub.id,undefined,gs.id);op1.hide()"
+                        <img [src]="pic.config" (click)="config(sub.id,undefined,gs.id);op1.hide()"
                             class="btn-cart">
-                        <img src="/assets/image/vas.png" (click)="vas(gs.id);op1.hide()" class="btn-cart">
-                        <img src="/assets/image/remove.png" (click)="removeGroupSubscriber(sub.id,gs.id)"
+                        <img [src]="pic.vas" (click)="vas(gs.id);op1.hide()" class="btn-cart">
+                        <img [src]="pic.remove" (click)="removeGroupSubscriber(sub.id,gs.id)"
                             class="btn-cart">
                     </div>
                 </div>
@@ -66,9 +67,9 @@
                                     <div>Speed data package 10GB</div>
                                 </div>
                                 <div class="col-lg-5" style="text-align:right">        
-                                    <img src="/assets/image/remove.png" (click)="removeVas(vas.id)"
+                                    <img [src]="pic.remove" (click)="removeVas(vas.id)"
                                         class="btn-cart">
-                                    <img src="/assets/image/change.png" class="btn-cart">
+                                    <img [src]="pic.change" class="btn-cart">
                                 </div>
                             </div>
                         </mat-card>
@@ -82,8 +83,6 @@
         <div class="row">
             <div class="col-lg-12">
                 <div>Upfront Total: {{shoppingCartService.upfrontTotalDetail}} = ${{shoppingCartService.upfrontTotalSum}}</div>
-                <!-- <div>Clubpoint Required: <img src="assets/image/point.png" width="20px" height="20px" />500</div>
-                <div>Total Monthly Rate: $788+$18</div> -->
             </div>
         </div>
         <div class="row" style="text-align:right">

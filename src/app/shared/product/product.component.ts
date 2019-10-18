@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 //import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
+import * as picture from '../../service/pic';
 export interface DialogData {
   product
 }
@@ -13,6 +14,7 @@ export interface DialogData {
 export class ProductComponent implements OnInit {
   @Input() product;
   @Input() showBtn:boolean = true;
+  pic = picture;
   constructor(public dialog: MatDialog) { }
   @Output() addToCart = new EventEmitter();
   ngOnInit() {

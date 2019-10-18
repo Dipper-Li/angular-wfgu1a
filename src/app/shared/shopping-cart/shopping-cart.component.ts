@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { Router, ParamMap } from '@angular/router';
 import { ShoppingCartService } from '../../service/shopping-cart.service';
-
+import * as picture from '../../service/pic';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
@@ -10,6 +10,7 @@ import { ShoppingCartService } from '../../service/shopping-cart.service';
 export class ShoppingCartComponent implements OnInit {
   subscribers;
   upfrontTotal;
+  pic = picture;
   constructor(private router: Router, private shoppingCartService:ShoppingCartService) { 
     this.subscribers = this.shoppingCartService.getsubscribers();
   }
