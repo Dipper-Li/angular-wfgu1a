@@ -21,7 +21,7 @@ openSnackBar() {
     });
   }
   ngOnInit() {
-    this.activeIndex = this.route.firstChild.snapshot.data['activeIndex'];
+    this.activeIndex = this.route.firstChild?this.route.firstChild.snapshot.data['activeIndex']:0;
     let t = this.router.events.pipe(filter((event:RouterEvent): event is NavigationEnd =>event instanceof NavigationEnd));
     t.subscribe(event => {
       this.activeIndex = this.route.firstChild.snapshot.data['activeIndex'];

@@ -1,0 +1,63 @@
+<div class="panel panel-default" style="border-radius: 10px" style="width:188px;">
+    <button class="btn btn-xs btn-new">NEW</button>
+    <button class="btn btn-xs btn-sale">SALE</button>
+    <img [attr.src]="product.type=='vas'?'/assets/image/vas.png':'/assets/image/2561531a.png'" width="100%" height="162px">
+    <ul class="list-group" *ngIf="product.type=='offer'">
+        <li class="list-group-item"><b>$3380</b></li>
+        <li class="list-group-item"><b>(20GB -> 30GB)</b></li>
+        <li class="list-group-item">Apple Iphone X 256GB</li>
+        <li class="list-group-item">Ultra Speed User Plan</li>
+        <li class="list-group-item">Upfront $8299</li>
+        <li class="list-group-item">(Rebate: $499)</li>
+        <li class="list-group-item">Unlimited minutes</li>
+        <li class="list-group-item">2.5GB Local Data</li>
+        <li class="list-group-item">
+            <span class="rating-star fill"></span>
+            <span class="rating-star fill"></span>
+            <span class="rating-star fill"></span>
+            <span class="rating-star fill"></span>
+            <span class="rating-star"></span>
+        </li>
+        <br>
+        <li class="list-group-item discount">HK$888.0</li>
+        <li class="list-group-item contract">HK$788/month</li>
+        <li class="list-group-item contract">24 months contract</li>
+        <li class="list-group-item" *ngIf="showBtn">
+            <button class="btn addto" (click)="add()">ADD TO CART</button>
+        </li>
+        <br>
+        <li class="list-group-item" style="text-align: center">
+            <a href="#">Details</a>
+        </li>
+        <br>
+    </ul>
+    <ul class="list-group" *ngIf="product.type=='vas'">
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">Speed Data Package</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">10GB Local Data</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item">
+                <span class="rating-star"></span>
+                <span class="rating-star"></span>
+                <span class="rating-star"></span>
+                <span class="rating-star"></span>
+                <span class="rating-star"></span>
+            </li>
+            <br>
+            <li class="list-group-item">&nbsp;</li>
+            <li class="list-group-item contract">HK$150/month</li>
+            <li class="list-group-item contract">24 months contract</li>
+            <li class="list-group-item" *ngIf="showBtn">
+                <button class="btn addto" (click)="add()">ADD TO CART</button>
+            </li>
+            <br>
+            <li class="list-group-item" style="text-align: center">
+                <a href="#">Details</a>
+            </li>
+            <br>
+        </ul>
+</div>

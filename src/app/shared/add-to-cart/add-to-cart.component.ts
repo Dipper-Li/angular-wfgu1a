@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 import { FormControl } from '@angular/forms';
 import {MatDialogRef} from '@angular/material';
 export interface DialogData {

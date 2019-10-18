@@ -61,7 +61,7 @@ li {
     border: none;
     border-radius: 5px;
     background-color: #fff;
-    padding: 10px 5px 10px 25px;
+    padding: 10px 5px 10px 5px;
     text-align: center;
     background-image: url(/assets/image/product-item-add-to-cart-icon.png);
     background-size: 13px 13px;

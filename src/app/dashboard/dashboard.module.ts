@@ -20,9 +20,10 @@ import { DocumentComponent } from './document/document.component';
 import { SummaryComponent } from './summary/summary.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {SnackBarComponentExample} from './snack-bar-component-example';
+import {DialogOverviewExample, DialogOverviewExampleDialog} from './dialog-overview-example';
 @NgModule({
   declarations: [DashboardComponent, OfferselectionComponent,BasicinfoComponent, ConfigComponent, PaymentComponent, PhysicalresourcesComponent, DocumentComponent, SummaryComponent, SnackBarComponentExample,
-     ],
+     DialogOverviewExample, DialogOverviewExampleDialog],
   imports: [
     DashboardRoutingModule,
     CommonModule,
@@ -37,7 +38,7 @@ import {SnackBarComponentExample} from './snack-bar-component-example';
     
     ReactiveFormsModule
   ],
-   entryComponents:[SnackBarComponentExample],
+   entryComponents:[SnackBarComponentExample,DialogOverviewExample, DialogOverviewExampleDialog],
   exports:[DashboardComponent]
 })
 export class DashboardModule { }
