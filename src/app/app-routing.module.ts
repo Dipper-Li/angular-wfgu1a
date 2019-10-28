@@ -4,11 +4,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch:'full' },
   {
     path: 'dashboard',
+    //loadChildren: () => import('./crisis-center/crisis-center.module').then(mod => mod.CrisisCenterModule),
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   },
+  { path: '', redirectTo: '/dashboard', pathMatch:'full' },
   // { path: 'offerselection', component: OfferSelectionComponent },
   // { path: 'configure', component: ConfigureComponent },
   // { path: 'configure/:itemId', component: ConfigureComponent },

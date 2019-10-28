@@ -1,87 +1,30 @@
 <div class="panel-body">
-    <div class='row' [hidden]="this.isvas=='Y'">
-        <div class='col-lg-2 col-md-3 col-xs-3'>
-            <label class="radio-inline">
-                <input type="radio" name="useage" value="option1" checked> Individual
-            </label>
-        </div>
-        <div class='col-lg-2 col-md-3 col-xs-3'>
-            <label class="radio-inline">
-                <input type="radio" name="useage" value="option2"> Commercial
-            </label>
-        </div>
-    </div>
-   
-    <div class='row' [hidden]="this.isvas=='Y'">
-        <br>
-        <div class='col-lg-4'>
-            <div class="text-muted">Product Line</div>
-            <select class="form-control" style="width: 40%;display: inline;">
-                <option>Mobile</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-            <button class="btn" style="margin-top: -3.5px;margin-left: 3px" disabled>
-                Rollout Address
-            </button>
-        </div>
-    </div>
-    
-    <div class='row' [hidden]="this.isvas=='Y'">
-            <br>
-        <div class='col-lg-2 col-md-3 col-xs-3'>
-            <label class="radio-inline">
-                <input name="career" type="radio" name="use" value="option1" checked> Staff
-            </label>
-        </div>
-        <div class='col-lg-2 col-md-3 col-xs-3'>
-            <label class="radio-inline">
-                <input name="career" type="radio" name="use" value="option2"> Domestic Helper
-            </label>
-        </div>
-        <div class='col-lg-2 col-md-3 col-xs-3'>
-            <label class="radio-inline">
-                <input  name="career"type="radio" name="use" value="option2"> Age 11-17 Student
-            </label>
-        </div>
-    </div>
-    <br>
     <div class='row'>
         <div class='col-lg-2 col-md-3 col-xs-3'>
-            Recommendation
-            <app-bubble text="1"></app-bubble>
-        </div>
-    </div>
-    <br><br>
-    <div class='row'>
-        <div class='col-lg-2 col-md-3 col-sm-3 col-xs-3'>
-            <app-product [product]="product" (addToCart)="addToCart($event)"></app-product>
-        </div>
-        <div class='col-lg-2 col-md-3 col-sm-3 col-xs-3'>
-            <app-product [product]="product" (addToCart)="addToCart($event)"></app-product>
-        </div>
-    </div>
-    <!-- <div class='row'>
-        <div class='col-lg-2 col-md-3 col-xs-3'>
-            Filter By
-        </div>
-    </div>
-    <br> -->
-    <div class='row'>
-        <div class='col-lg-2 col-md-3 col-xs-3' style="width:225px">
             <app-filter-menu (search)="search($event)" [categories]="categories"></app-filter-menu>
         </div>
-        <div>
-            <div class='col-lg-2 col-md-3 col-xs-3'>
-               <app-product [product]="product" (addToCart)="addToCart($event)"></app-product>
+        <div class='col-lg-9 col-md-8 col-xs-8'>
+            <div>
+                <div class='row col-lg-8'>Acquisition Recommendation<br></div>
+                <br><br>
+                <div class='row col-lg-8'>Items 1-4 of 4</div>
+                <br><br>
+                <div class='row'>
+                    <div class='col-lg-3 col-md-3 col-xs-3' *ngFor='let r of recom'>
+                        <app-product [product]="r" (addToCart)="addToCart($event)"></app-product>
+                    </div>
+                </div>
             </div>
-            <div class='col-lg-2 col-md-3 col-xs-3'>
-               <app-product [product]="product" (addToCart)="addToCart($event)"></app-product>
-            </div>
-            <div class='col-lg-2 col-md-3 col-xs-3'>
-               <app-product [product]="product" (addToCart)="addToCart($event)"></app-product>
+            <div>
+                <div class='row col-lg-8'>Other suggested Acquisition / Upgrade / Retention / Add-on<br></div>
+                <br><br>
+                <div class='row col-lg-8'>Items 1-4 of 4</div>
+                <br><br>
+                <div class='row'>
+                    <div class='col-lg-3 col-md-3 col-xs-3' *ngFor='let r of otrecom'>
+                        <app-product [product]="r" (addToCart)="addToCart($event)"></app-product>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -91,7 +34,7 @@
         <div class='col-lg-12'>
             <p>Clubpoint in this account: <img [src]="pic.point" width="20px" height="20px" /> 391 -
                 Clubpoint burned in this order: <img [src]="pic.point" width="20px" height="20px" /> 0 +
-                Clubpoint earned in this order: 0
+                Clubpoint earned in this order: <img [src]="pic.point" width="20px" height="20px" />0
             </p>
         </div>
     </div>
@@ -101,7 +44,6 @@
         </div>
     </div>
     <div class="row">
-
         <mat-tab-group>
             <mat-tab>
                 <ng-template mat-tab-label>
@@ -109,17 +51,9 @@
                     <app-bubble text="1"></app-bubble>
                 </ng-template>
                 <ng-container>
-                    <div class='col-lg-2 col-md-3 col-xs-3'>
+                    <div class='col-lg-2 col-md-3 col-xs-3' *ngFor='let r of clubrecom'>
                         <br>
-                       <app-product [product]="product" (addToCart)="addToCart($event)"></app-product>
-                    </div>
-                    <div class='col-lg-2 col-md-3 col-xs-3'>
-                        <br>
-                       <app-product [product]="product" (addToCart)="addToCart($event)"></app-product>
-                    </div>
-                    <div class='col-lg-2 col-md-3 col-xs-3'>
-                        <br>
-                       <app-product [product]="product" (addToCart)="addToCart($event)"></app-product>
+                        <app-product [product]="r" (addToCart)="addToCart($event)"></app-product>
                     </div>
                 </ng-container>
             </mat-tab>
@@ -138,8 +72,8 @@
         </mat-tab-group>
     </div>
     <div class="row" [hidden]="this.isvas!='Y'">
-            <div class='col-lg-12' style="text-align: end">
-        <button class="btn btn-primary" (click)="close()">Close</button>
-        <div class='col-lg-12'>
-    </div>
-</div>
+        <div class='col-lg-12' style="text-align: end">
+            <button class="btn btn-primary" (click)="close()">Close</button>
+            <div class='col-lg-12'>
+            </div>
+        </div>

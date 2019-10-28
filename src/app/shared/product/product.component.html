@@ -1,27 +1,70 @@
-<div class="panel panel-default" style="border-radius: 10px" style="width:188px;">
-    <button class="btn btn-xs btn-new">NEW</button>
-    <button class="btn btn-xs btn-sale">SALE</button>
-    <img [attr.src]="product.type=='vas'?pic.vas:pic.product" width="100%" height="162px">
-    <ul class="list-group" *ngIf="product.type=='offer'">
-        <li class="list-group-item"><b>$3380</b></li>
-        <li class="list-group-item"><b>(20GB -> 30GB)</b></li>
-        <li class="list-group-item">Apple Iphone X 256GB</li>
-        <li class="list-group-item">Ultra Speed User Plan</li>
-        <li class="list-group-item">Upfront $8299</li>
-        <li class="list-group-item">(Rebate: $499)</li>
-        <li class="list-group-item">Unlimited minutes</li>
-        <li class="list-group-item">2.5GB Local Data</li>
-        <li class="list-group-item">
-            <span class="rating-star fill"></span>
-            <span class="rating-star fill"></span>
-            <span class="rating-star fill"></span>
-            <span class="rating-star fill"></span>
-            <span class="rating-star"></span>
-        </li>
+<div class="panel panel-default" style="border-radius: 10px" style="width:200px;height:505px;">
+    <ng-container *ngFor='let tag of product.tags'>
+        <button class="btn btn-xs btn-tag" [style.backgroundColor]='tag.color'>{{tag.value}}</button>
+    </ng-container>
+
+    <ul class="list-group" *ngIf="product.product.type=='offer'" style="height:93%;">
+        <div style='height: 28%'>
+            <li class="list-group-item size-12" style='text-align: center'>
+                <img style='max-height: 125px' [attr.src]="product.picture">
+            </li>
+        </div>
+        <div style='height: 9%'>
+            <li class="list-group-item size-12">
+                <b *ngIf='product.info.price!=null'>${{product.info.price}}</b>
+                <b *ngIf='product.info.clubPoint'> + <img [src]="pic.point" width="20px"
+                        height="20px" />{{product.info.clubPoint}}</b>
+            </li>
+            <li class="list-group-item size-12">
+                <b>{{product.info.desc}}</b>
+            </li>
+        </div>
+        <div style='height: 26%'>
+            <li class="list-group-item" style='padding-bottom: 2px'>{{product.product.name}}</li>
+            <ng-container *ngFor='let desc of product.product.descs'>
+                <li class="list-group-item" style='padding-bottom: 2px'>{{desc}}</li>
+            </ng-container>
+        </div>
+        <div style='height: 5%'>
+            <li class="list-group-item">
+                <span *ngFor='let start of [].constructor(product.starts)' class="rating-star fill"></span>
+                <span *ngFor='let start of [].constructor(5-product.starts)' class="rating-star"></span>
+            </li>
+        </div>
         <br>
-        <li class="list-group-item discount">HK$888.0</li>
-        <li class="list-group-item contract">HK$788/month</li>
-        <li class="list-group-item contract">24 months contract</li>
+        <div style='height: 12%' *ngIf='product.payment?.length < 1'>
+            <ng-container *ngIf='product.plan.isDiy'>
+                <li class="list-group-item pink">
+                    DIY Plan
+                </li>
+            </ng-container>
+            <ng-container *ngIf='!product.plan.isDiy'>
+                <li class="list-group-item discount">
+                    {{product.plan.oriPrice?'HK$'+product.plan.oriPrice:''}}
+                </li>
+                <li class="list-group-item pink size-12" *ngIf='product.plan.price'>
+                    HK${{product.plan.price}}/{{product.plan.per}}</li>
+                <li class="list-group-item pink size-12" *ngIf='product.plan.period'>{{product.plan.period}}
+                    {{product.plan.per}}s contract</li>
+                <li class="list-group-item pink size-12" *ngIf='product.plan.other'>{{product.plan.other}}</li>
+            </ng-container>
+
+        </div>
+        <div style='height: 12%' *ngIf='product.payment?.length > 0'>
+            <ng-container *ngFor='let payment of product.payment'>
+                <ng-container [ngSwitch]='payment.type'>
+                    <li *ngSwitchCase="'point'" class='list-group-item pink'>
+                        <img [src]="pic.point" width="20px" height="20px" />{{payment.clubpoint}}
+                    </li>
+                    <li *ngSwitchCase="'mix'" class='list-group-item pink'>
+                        <img [src]="pic.point" width="20px" height="20px" />{{payment.clubpoint}} + ${{payment.cash}}
+                    </li>
+                    <li *ngSwitchCase="'money'" class='list-group-item pink'>
+                        ${{payment.cash}}
+                    </li>
+                </ng-container>
+            </ng-container>
+        </div>
         <li class="list-group-item" *ngIf="showBtn">
             <button class="btn addto" (click)="add()">ADD TO CART</button>
         </li>
@@ -31,33 +74,33 @@
         </li>
         <br>
     </ul>
-    <ul class="list-group" *ngIf="product.type=='vas'">
-            <li class="list-group-item">&nbsp;</li>
-            <li class="list-group-item">Speed Data Package</li>
-            <li class="list-group-item">&nbsp;</li>
-            <li class="list-group-item">10GB Local Data</li>
-            <li class="list-group-item">&nbsp;</li>
-            <li class="list-group-item">&nbsp;</li>
-            <li class="list-group-item">&nbsp;</li>
-            <li class="list-group-item">&nbsp;</li>
-            <li class="list-group-item">
-                <span class="rating-star"></span>
-                <span class="rating-star"></span>
-                <span class="rating-star"></span>
-                <span class="rating-star"></span>
-                <span class="rating-star"></span>
-            </li>
-            <br>
-            <li class="list-group-item">&nbsp;</li>
-            <li class="list-group-item contract">HK$150/month</li>
-            <li class="list-group-item contract">24 months contract</li>
-            <li class="list-group-item" *ngIf="showBtn">
-                <button class="btn addto" (click)="add()">ADD TO CART</button>
-            </li>
-            <br>
-            <li class="list-group-item" style="text-align: center">
-                <a href="#">Details</a>
-            </li>
-            <br>
-        </ul>
+    <ul class="list-group" *ngIf="product.product.type=='vas'">
+        <li class="list-group-item">&nbsp;</li>
+        <li class="list-group-item">Speed Data Package</li>
+        <li class="list-group-item">&nbsp;</li>
+        <li class="list-group-item">10GB Local Data</li>
+        <li class="list-group-item">&nbsp;</li>
+        <li class="list-group-item">&nbsp;</li>
+        <li class="list-group-item">&nbsp;</li>
+        <li class="list-group-item">&nbsp;</li>
+        <li class="list-group-item">
+            <span class="rating-star"></span>
+            <span class="rating-star"></span>
+            <span class="rating-star"></span>
+            <span class="rating-star"></span>
+            <span class="rating-star"></span>
+        </li>
+        <br>
+        <li class="list-group-item">&nbsp;</li>
+        <li class="list-group-item pink">HK$150/month</li>
+        <li class="list-group-item pink">24 months contract</li>
+        <li class="list-group-item" *ngIf="showBtn">
+            <button class="btn addto" (click)="add()">ADD TO CART</button>
+        </li>
+        <br>
+        <li class="list-group-item" style="text-align: center">
+            <a href="#">Details</a>
+        </li>
+        <br>
+    </ul>
 </div>

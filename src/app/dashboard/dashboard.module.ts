@@ -1,35 +1,31 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatTabsModule } from '@angular/material/tabs';
 import { CheckboxModule } from 'primeng/checkbox';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { StepsModule } from 'primeng/components/steps/steps';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
+import { SliderModule } from 'primeng/slider';
 import { ShareModule } from '../shared/share.module';
 import { BasicinfoComponent } from './basicinfo/basicinfo.component';
 import { ConfigComponent } from './config/config.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
-//import { BasicInfoComponent } from './../sales-offer/basic-info/basic-info.component';
 import { OfferselectionComponent } from './offerselection/offerselection.component';
 import { DashboardComponent } from './dashboard.component';
 import { PaymentComponent } from './payment/payment.component';
 import { PhysicalresourcesComponent } from './physicalresources/physicalresources.component';
 import { DocumentComponent } from './document/document.component';
 import { SummaryComponent } from './summary/summary.component';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {SnackBarComponentExample} from './snack-bar-component-example';
-import {DialogOverviewExample, DialogOverviewExampleDialog} from './dialog-overview-example';
+
+import { DemoMaterialModule } from '../material-module';
 @NgModule({
-  declarations: [DashboardComponent, OfferselectionComponent,BasicinfoComponent, ConfigComponent, PaymentComponent, PhysicalresourcesComponent, DocumentComponent, SummaryComponent, SnackBarComponentExample,
-     DialogOverviewExample, DialogOverviewExampleDialog],
+  declarations: [DashboardComponent, OfferselectionComponent,BasicinfoComponent, ConfigComponent, PaymentComponent, PhysicalresourcesComponent, DocumentComponent, SummaryComponent],
   imports: [
+    SliderModule,
+    DemoMaterialModule,
     DashboardRoutingModule,
     CommonModule,
-    MatRadioModule,
     ShareModule,
-    MatTabsModule,
     OverlayPanelModule,
     MultiSelectModule,
     CheckboxModule,
@@ -38,7 +34,7 @@ import {DialogOverviewExample, DialogOverviewExampleDialog} from './dialog-overv
     
     ReactiveFormsModule
   ],
-   entryComponents:[SnackBarComponentExample,DialogOverviewExample, DialogOverviewExampleDialog],
+   entryComponents:[],
   exports:[DashboardComponent]
 })
 export class DashboardModule { }

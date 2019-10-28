@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
 import { FormControl } from '@angular/forms';
 import {MatDialogRef} from '@angular/material';
+import * as picture from '../../service/pic';
 export interface DialogData {
   product:any
 }
@@ -11,6 +12,7 @@ export interface DialogData {
   styleUrls: ['./add-to-cart.component.scss'],
 })
 export class AddToCartComponent implements OnInit{
+  pic= picture;
   contractPeriodList = [{label: '24Months', value: '24'},{label: '12Months', value: '12'}];
   internalStorageList = [{label: '256GB', value: '256'},{label: '128GB', value: '128'}];
   colorList = [{label: 'white', value: 'white'},{label: 'black', value: 'black'}];

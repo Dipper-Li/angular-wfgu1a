@@ -83,6 +83,6 @@ export class BasicinfoComponent implements OnInit {
   next() {
     console.log('this.basicInfo:',this.basicInfo);
     this.shoppingCartService.saveBasicInfo(this.basicInfo.value);
-    this.router.navigate(['dashboard/offerselection']);
+    this.router.navigate(['dashboard','offerselection']);
   }
 }

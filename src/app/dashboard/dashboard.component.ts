@@ -26,18 +26,6 @@ openSnackBar() {
     t.subscribe(event => {
       this.activeIndex = this.route.firstChild?this.route.firstChild.snapshot.data['activeIndex']:0;
     });
-    // this.router.events.subscribe(event => {
-    //   console.log(event instanceof NavigationEnd);
-    //   if(event instanceof NavigationEnd) {
-    //     this.activeIndex = this.route.firstChild.snapshot.data['activeIndex'];
-    //   }
-    // });
-    // this.router.events.pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd));
-    // this.router.events.pipe(evt => evt instanceof NavigationEnd)
-    //     .subscribe((event) => {
-    //         console.log(event['url']);
-    //         console.log(this.route.firstChild.routeConfig.path);
-    //     });
     this.items = [{
       label: 'Basic Info',
 

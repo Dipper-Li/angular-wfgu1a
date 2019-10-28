@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
   @Output() addToCart = new EventEmitter();
   ngOnInit() {
+    console.log('product:',this.product);
   }
   add(){
     if(this.product.type=='vas'){
@@ -28,7 +29,7 @@ export class ProductComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(AddToCartComponent, {
-      width: '830px',
+      width: '850px',
       data: {
         product: this.product
       }

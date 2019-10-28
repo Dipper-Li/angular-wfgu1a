@@ -3,6 +3,8 @@ import { ShoppingCartService } from '../../service/shopping-cart.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import * as picture from '../../service/pic';
+import { recom as rc, otherRecom, clrecom } from '../../service/data';
+
 @Component({
   selector: 'app-offerselection',
   templateUrl: './offerselection.component.html',
@@ -17,7 +19,9 @@ export class OfferselectionComponent implements OnInit {
   isvas:any;
   id:any;
   categories:any;
-  test;
+  recom = rc;
+  otrecom = otherRecom;
+  clubrecom = clrecom;
   constructor(private router: Router, private shoppingCartService:ShoppingCartService, private route: ActivatedRoute, private _snackBar: MatSnackBar) { 
     window.scroll(0,0);
     this.product = {
@@ -93,9 +97,9 @@ export class OfferselectionComponent implements OnInit {
   }
   addToCart(e){
     console.log("offer:",e);
-    if(e.type=='offer'){
+    if(e.product.type=='offer'){
       this.shoppingCartService.addToCart(e);
-    }else if(e.type=='vas'){
+    }else if(e.product.type=='vas'){
       this.shoppingCartService.addVas(e,this.id);
     }
     this.openSnackBar('Add successfully');
