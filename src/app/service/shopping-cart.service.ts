@@ -9,6 +9,8 @@ export class ShoppingCartService {
   subscribers = [];
   upfrontTotalDetail = '';
   upfrontTotalSum = 0;
+  clubpointRequired = 0;
+  totalMonthlyRate = '';
   constructor(private appCommon: AppCommon) {
     this.subscribers = this.appCommon.data('subscribers');
     this.subscribers = this.subscribers != null ? this.subscribers : [];
@@ -173,14 +175,21 @@ export class ShoppingCartService {
   getUpfrontTotal() {
     this.upfrontTotalDetail = '';
     this.upfrontTotalSum = 0;
+    this.clubpointRequired = 0;
+    this.totalMonthlyRate = '';
     for (let su of this.subscribers) {
       this.summaryUpfrontTotal(su);
     }
   }
   summaryUpfrontTotal(su: any) {
     if (su.product != null && su.product != undefined) {
-      this.upfrontTotalDetail = this.upfrontTotalDetail + (this.upfrontTotalDetail == '' ? '$' : ' +$') + su.product.price;
-      this.upfrontTotalSum += su.product.price;
+      this.upfrontTotalDetail = this.upfrontTotalDetail + (this.upfrontTotalDetail == '' ? '$' : ' +$') + su.product.info.price;
+      if(su.product.plan.price){
+        this.upfrontTotalDetail = this.upfrontTotalDetail + (this.upfrontTotalDetail == '' ? '$' : ' +$') + su.product.plan.price;
+        this.totalMonthlyRate = this.totalMonthlyRate + (this.totalMonthlyRate == '' ? '$' : ' +$') + su.product.plan.price;
+      }
+      this.upfrontTotalSum += su.product.info.price+su.product.plan.price;
+      this.clubpointRequired += su.product.info.clubPoint?su.product.info.clubPoint:0;
     }
     if (su.vas != null && su.vas != undefined) {
       for (let v of su.vas) {

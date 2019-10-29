@@ -3,7 +3,7 @@
         <button class="btn btn-xs btn-tag" [style.backgroundColor]='tag.color'>{{tag.value}}</button>
     </ng-container>
 
-    <ul class="list-group" *ngIf="product.product.type=='offer'" style="height:93%;">
+    <ul class="list-group" *ngIf="product.detail.type=='offer'" style="height:93%;">
         <div style='height: 28%'>
             <li class="list-group-item size-12" style='text-align: center'>
                 <img style='max-height: 125px' [attr.src]="product.picture">
@@ -20,8 +20,8 @@
             </li>
         </div>
         <div style='height: 26%'>
-            <li class="list-group-item" style='padding-bottom: 2px'>{{product.product.name}}</li>
-            <ng-container *ngFor='let desc of product.product.descs'>
+            <li class="list-group-item" style='padding-bottom: 2px'>{{product.detail.name}}</li>
+            <ng-container *ngFor='let desc of product.detail.descs'>
                 <li class="list-group-item" style='padding-bottom: 2px'>{{desc}}</li>
             </ng-container>
         </div>
@@ -74,7 +74,7 @@
         </li>
         <br>
     </ul>
-    <ul class="list-group" *ngIf="product.product.type=='vas'">
+    <ul class="list-group" *ngIf="product.detail.type=='vas'">
         <li class="list-group-item">&nbsp;</li>
         <li class="list-group-item">Speed Data Package</li>
         <li class="list-group-item">&nbsp;</li>

@@ -11,7 +11,7 @@ export const recom = [
             clubPoint: null,
             desc: '(20GB->30GB)'
         },
-        product: {
+        detail: {
             name: 'Apple iPhone XS 256GB',
             type: 'offer',
             descs: [
@@ -24,11 +24,13 @@ export const recom = [
         },
         starts: 4,
         plan: {
+            name:'Ultra Speed User Plan',
             oriPrice: 888,
             price: 738,
             per: 'month',
             period: 24,
-            other: ''
+            other: '',
+            localData: 20
         },
         mup: false
     },
@@ -42,7 +44,7 @@ export const recom = [
             clubPoint: null,
             desc: '(20GB)'
         },
-        product: {
+        detail: {
             name: 'Apple iPhone XS 256GB',
             type: 'offer',
             descs: [
@@ -55,12 +57,14 @@ export const recom = [
         },
         starts: 4,
         plan: {
+            name:'Ultra Speed User Plan',
             isDiy: true,
             oriPrice: null,
             price: 408,
             per: 'month',
             period: 24,
-            other: ''
+            other: '',
+            localData: null
         },
         mup: false
     },
@@ -74,7 +78,7 @@ export const recom = [
             clubPoint: 500,
             desc: '(20GB)'
         },
-        product: {
+        detail: {
             name: 'Apple iPhone XS 256GB',
             type: 'offer',
             descs: [
@@ -87,11 +91,13 @@ export const recom = [
         },
         starts: 4,
         plan: {
+            name:'Ultra Speed User Plan',
             oriPrice: null,
             price: 408,
             per: 'month',
             period: 24,
-            other: ''
+            other: '',
+            localData: 20
         },
         mup: false
     },
@@ -101,11 +107,12 @@ export const recom = [
         ],
         picture: pic.p30lite,
         info: {
-            price: 2188,
+            price: 0,
             clubPoint: null,
-            desc: null
+            desc: null,
+            dependOnPeriod:true
         },
-        product: {
+        detail: {
             name: 'HuaweiP30Lite(6GB+28GB)',
             type: 'offer',
             descs: [
@@ -114,11 +121,13 @@ export const recom = [
         },
         starts: 4,
         plan: {
+            name:'Ultra Speed User Plan',
             oriPrice: null,
             price: null,
-            per: null,
+            per: 'month',
             period: null,
-            other: 'Handset $2188'
+            other: 'Handset as low as $0',
+            localData: 20
         },
         mup: false
     }
@@ -135,7 +144,7 @@ export const otherRecom = [
             clubPoint: null,
             desc: '1000M Fiber-to-the-Home Plan'
         },
-        product: {
+        detail: {
             name: null,
             type: 'offer',
             descs: [
@@ -165,7 +174,7 @@ export const otherRecom = [
             clubPoint: null,
             desc: 'PON Upgrade on  existing broadband'
         },
-        product: {
+        detail: {
             name: null,
             type: 'offer',
             descs: [
@@ -193,7 +202,7 @@ export const otherRecom = [
             clubPoint: null,
             desc: 'Retention on existing mobile'
         },
-        product: {
+        detail: {
             name: null,
             type: 'offer',
             descs: [
@@ -223,7 +232,7 @@ export const otherRecom = [
             clubPoint: null,
             desc: 'Add VAS on existing mobile'
         },
-        product: {
+        detail: {
             name: null,
             type: 'offer',
             descs: [
@@ -254,7 +263,7 @@ export const clrecom = [
             clubPoint: null,
             desc: null
         },
-        product: {
+        detail: {
             name: 'XIAOMI MI A3',
             type: 'offer',
             descs: [
@@ -263,11 +272,13 @@ export const clrecom = [
         },
         starts: 4,
         plan: {
+            name:'Ultra Speed User Plan',
             oriPrice: null,
             price: null,
             per: null,
             period: null,
-            other: 'As low as $228'
+            other: 'As low as $228',
+            localData: 20
         },
         payment: [
             { type: 'point', clubpoint: 900, cash: null }, 

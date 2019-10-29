@@ -4,17 +4,17 @@
     </div>
     <div class="col-lg-9">
         <div class="row" *ngIf='!product.plan.isDiy'>
-            <div class="col-lg-3" style="margin-top:9px">
+            <div class="col-lg-3">
                 <span>Contract Period</span>
             </div>
             <div>
-                <p-dropdown [(ngModel)]="contractPeriod" [options]="contractPeriodList" [style]="{'width':'400px'}">
+                <p-dropdown [(ngModel)]="contractPeriod" [options]="contractPeriodList" [style]="{'width':'400px'}" (onChange)='setPrice($event)'>
                 </p-dropdown>
             </div>
         </div>
         <br>
         <div class="row">
-            <div class="col-lg-3" style="margin-top:9px">
+            <div class="col-lg-3">
                 <span>Internal Storage</span>
             </div>
             <div>
@@ -24,7 +24,7 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-lg-3" style="margin-top:9px">
+            <div class="col-lg-3">
                 <span>Color</span>
             </div>
             <div>
@@ -32,28 +32,60 @@
             </div>
         </div>
         <ng-container *ngIf='product.plan.isDiy'>
-            <br>
             <div class="row">
-                <div class="col-lg-3" style="margin-top:9px">
+                    <br>
+                <div class="col-lg-3">
                     <span>Contract Period</span>
                 </div>
-                <div class="col-lg-9">
-                        <p-slider [style]="{'width':'14em'}"></p-slider>
+                <div class="col-lg-3">
+                    <span>{{contractPeriod}}M</span>
+                </div>        
+            </div>
+            <div class="row">
+                <br>
+                <div class="col-lg-12" style='padding-left: 23px'>
+                    <p-slider [(ngModel)]="contractPeriod" [min]="1" [max]="24" [style]="{'width':'90%'}" (onChange)='setPrice($event)'></p-slider>
                 </div>
+            </div>
+            <div class="row">
+                    <br>
+                <div class="col-lg-3">
+                    <span>Local Data Entitlement</span>
+                </div>
+                <div class="col-lg-3">
+                    <span>{{localData}}GB</span>
+                </div>        
+            </div>
+            <div class="row">
+                <br>
+                <div class="col-lg-12" style='padding-left: 23px'>
+                    <p-slider [(ngModel)]="localData" [min]="1" [max]="20" [style]="{'width':'90%'}"></p-slider>
+                </div>
+            </div>
+            <div class="row">
+                    <br>
+                <div class="col-lg-3">
+                    <span>Unlimited Daily Data Usage between</span>
+                </div>
+                <div class="col-lg-9">
+                    <p-calendar [(ngModel)]="dateStart" [timeOnly]="true"></p-calendar>
+                    ——
+                    <p-calendar [(ngModel)]="dateEnd" [timeOnly]="true"></p-calendar>
+                </div>        
             </div>
         </ng-container>
         <div class="row">
             <br>
-            <div class="col-lg-12" style="margin-top:9px">
+            <div class="col-lg-12">
                 <img [src]="pic.point" width="20px" height="20px" />114.9 Clubpoints wiil be earned
             </div>
         </div>
         <br>
         <div class="row">
-            <div class="col-lg-9" style="margin-top:9px">
+            <div class="col-lg-9">
             </div>
-            <div class="col-lg-3" style="margin-top:9px">
-                <button class="btn btn-default" mat-button [mat-dialog-close]="product" (click)="updateProduct()"
+            <div class="col-lg-3">
+                <button style='background-color: #3D8BCD;color:white' class="btn btn-default" mat-button [mat-dialog-close]="product" (click)="updateProduct()"
                     cdkFocusInitial>Add to Cart</button>
             </div>
         </div>

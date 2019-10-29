@@ -97,9 +97,9 @@ export class OfferselectionComponent implements OnInit {
   }
   addToCart(e){
     console.log("offer:",e);
-    if(e.product.type=='offer'){
+    if(e.detail.type=='offer'){
       this.shoppingCartService.addToCart(e);
-    }else if(e.product.type=='vas'){
+    }else if(e.detail.type=='vas'){
       this.shoppingCartService.addVas(e,this.id);
     }
     this.openSnackBar('Add successfully');

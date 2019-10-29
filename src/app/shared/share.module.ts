@@ -9,6 +9,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { DropdownModule } from 'primeng/dropdown';
 import { SliderModule } from 'primeng/slider';
+import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { NumberSelectorComponent } from './number-selector/number-selector.component';
 import { MembersNumComponent } from './members-num/members-num.component';
@@ -17,6 +18,7 @@ import { DemoMaterialModule } from '../material-module';
 @NgModule({
   declarations: [BubbleComponent, ProductComponent, ExpansionMenuComponent, ShoppingCartComponent,  AddToCartComponent, NumberSelectorComponent, MembersNumComponent, FilterMenuComponent],
   imports: [
+    CalendarModule,
     SliderModule,
     CommonModule,
     DemoMaterialModule,

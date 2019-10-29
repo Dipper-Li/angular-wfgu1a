@@ -22,8 +22,8 @@
         </div>
         <div class="row">
             <div class="col-lg-12" style="margin-left:10px">
-                <div>Apple iPhone X 256GB (White)</div>
-                <div>Ultra Speed Service Plan 20GB Local Data</div>
+                <div>{{sub.product.detail.name}}{{' ('+sub.product.config?.color+')'}}</div>
+                <div>{{sub.product.plan.name}} {{sub.product.plan.localData+'GB Local Data'}}</div>
             </div>
         </div>
         <div *ngIf="sub.vas!=undefined">
@@ -83,6 +83,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <div>Upfront Total: {{shoppingCartService.upfrontTotalDetail}} = ${{shoppingCartService.upfrontTotalSum}}</div>
+                <div>Clubpoint Required: <img [src]="pic.point" width="20px" height="20px" /> {{shoppingCartService.clubpointRequired}}</div>
+                <div>Total Monthly Rate: {{shoppingCartService.totalMonthlyRate}}</div>               
             </div>
         </div>
         <div class="row" style="text-align:right">
