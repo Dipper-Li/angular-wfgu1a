@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material';
 import { FormControl } from '@angular/forms';
-import {MatDialogRef} from '@angular/material';
 import * as picture from '../../service/pic';
 export interface DialogData {
   product:any
