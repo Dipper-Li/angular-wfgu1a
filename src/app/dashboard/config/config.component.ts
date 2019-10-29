@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatDialogRef } from '@angular/material';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { ShoppingCartService } from '../../service/shopping-cart.service';
 import { NumberSelectorComponent } from '../../shared/number-selector/number-selector.component';

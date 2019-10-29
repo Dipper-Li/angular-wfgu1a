@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 //import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MatDialogRef } from '@angular/material';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
 import * as picture from '../../service/pic';
 export interface DialogData {
