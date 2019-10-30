@@ -24,7 +24,7 @@ export class ShoppingCartService {
   addToCart(product: any) {
     let subscriber = { id: this.getRandomNum() };
     subscriber['product'] = product;
-    if (product.mup) {
+    if (product.isMup) {
       subscriber['groupDesc'] = 'new group subscriber';
       subscriber['groupName'] = 'MUP group 1';
       subscriber['subscribers'] = [];

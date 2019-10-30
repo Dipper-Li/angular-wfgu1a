@@ -18,7 +18,6 @@ export class ProductComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
   @Output() addToCart = new EventEmitter();
   ngOnInit() {
-    console.log('product:',this.product);
   }
   add(){
     if(this.product.type=='vas'){

@@ -1,27 +1,27 @@
 <div class="panel-body">
-    <div class='row'>
-        <div class='col-lg-2 col-md-3 col-xs-3'>
+    <div class='row col-lg-11 col-md-12'>
+        <div class='col-lg-3 col-md-3 col-sm-4 col-xs-12' >
             <app-filter-menu (search)="search($event)" [categories]="categories"></app-filter-menu>
         </div>
-        <div class='col-lg-9 col-md-8 col-xs-8'>
-            <div>
+        <div class='col-lg-9 col-md-8 col-sm-8 col-xs-12'>
+            <div class='row'>
                 <div class='row col-lg-8'>Acquisition Recommendation<br></div>
                 <br><br>
                 <div class='row col-lg-8'>Items 1-4 of 4</div>
                 <br><br>
                 <div class='row'>
-                    <div class='col-lg-3 col-md-3 col-xs-3' *ngFor='let r of recom'>
+                    <div class='col-lg-3 col-md-4 col-xs-6' *ngFor='let r of recom'>
                         <app-product [product]="r" (addToCart)="addToCart($event)"></app-product>
                     </div>
                 </div>
             </div>
-            <div>
+            <div class='row'>
                 <div class='row col-lg-8'>Other suggested Acquisition / Upgrade / Retention / Add-on<br></div>
                 <br><br>
                 <div class='row col-lg-8'>Items 1-4 of 4</div>
                 <br><br>
                 <div class='row'>
-                    <div class='col-lg-3 col-md-3 col-xs-3' *ngFor='let r of otrecom'>
+                    <div class='col-lg-3 col-md-4 col-xs-6' *ngFor='let r of otrecom'>
                         <app-product [product]="r" (addToCart)="addToCart($event)"></app-product>
                     </div>
                 </div>

@@ -1,4 +1,65 @@
 import * as pic from './pic';
+export const categories = [
+    {
+        head: { key: 'productline', value: 'productline', label: 'Product Line' },
+        items: [
+            { key: 'mobile', value: 'mobile', label: 'Mobile', count: 534 },
+            { key: 'broadband', value: 'broadband', label: 'Broadband', count: 632 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+    {
+        head: { key: 'plancategory', value: 'plancategory', label: 'Plan Category' },
+        items: [
+            { key: 'general', value: 'general', label: 'General', count: 1007 },
+            { key: 'staff', value: 'staff', label: 'Staff', count: 43 },
+            { key: 'domestichelper', value: 'domestichelper', label: 'Domestic Helper', count: 43 },
+            { key: 'student', value: 'student', label: '11-17 age student ', count: 43 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+    {
+        head: { key: 'mobileplan', value: 'mobileplan', label: 'Mobile Plan' },
+        items: [
+            { key: 'simonly', value: 'simonly', label: 'SIM only', count: 50 },
+            { key: 'simstandalone', value: 'simstandalone', label: 'SIM + Standalone', count: 167 },
+            { key: 'simcoupon', value: 'simcoupon', label: 'SIM + Coupon', count: 244 },
+            { key: 'simhandset', value: 'simhandset', label: 'SIM + Handset', count: 132 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+    {
+        head: { key: 'mobilebrand', value: 'mobilebrand', label: 'Mobile Brand' },
+        items: [
+            { key: 'csl', value: 'csl', label: 'CSL', count: 234 },
+            { key: '1O1O', value: '1O1O', label: '1O1O', count: 312 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+    {
+        head: { key: 'ismup', value: 'ismup', label: 'is MUP' },
+        items: [
+            { key: 'yes', value: true, label: 'Yes', count: 252 },
+            { key: 'no', value: false, label: 'No', count: 275 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+    {
+        head: { key: 'localdataincluded', value: 'localdataincluded', label: 'Local Data Included' },
+        items: [
+            { key: 'less10', value: 'less10', label: '< 10GB', count: 123 },
+            { key: 'less20', value: 'less20', label: '10 -20 GB', count: 331 },
+            { key: 'larger20', value: 'larger20', label: '> 20 GB', count: 86 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+];
 export const recom = [
     {
         tags: [
@@ -24,7 +85,7 @@ export const recom = [
         },
         starts: 4,
         plan: {
-            name:'Ultra Speed User Plan',
+            name: 'Ultra Speed User Plan',
             oriPrice: 888,
             price: 738,
             per: 'month',
@@ -32,7 +93,7 @@ export const recom = [
             other: '',
             localData: 20
         },
-        mup: false
+        isMup: false
     },
     {
         tags: [
@@ -52,21 +113,20 @@ export const recom = [
                 'Upfront $8299 ',
                 '(Full Rebate)',
                 'Unlimited minutes',
-                '20GB Local Data',
             ]
         },
         starts: 4,
         plan: {
-            name:'Ultra Speed User Plan',
+            name: 'Ultra Speed User Plan',
             isDiy: true,
             oriPrice: null,
             price: 408,
             per: 'month',
-            period: 24,
+            period: null,
             other: '',
             localData: null
         },
-        mup: false
+        isMup: false
     },
     {
         tags: [
@@ -91,7 +151,7 @@ export const recom = [
         },
         starts: 4,
         plan: {
-            name:'Ultra Speed User Plan',
+            name: 'Ultra Speed User Plan',
             oriPrice: null,
             price: 408,
             per: 'month',
@@ -99,7 +159,7 @@ export const recom = [
             other: '',
             localData: 20
         },
-        mup: false
+        isMup: false
     },
     {
         tags: [
@@ -110,7 +170,7 @@ export const recom = [
             price: 0,
             clubPoint: null,
             desc: null,
-            dependOnPeriod:true
+            dependOnPeriod: true
         },
         detail: {
             name: 'HuaweiP30Lite(6GB+28GB)',
@@ -121,7 +181,7 @@ export const recom = [
         },
         starts: 4,
         plan: {
-            name:'Ultra Speed User Plan',
+            name: 'Ultra Speed User Plan',
             oriPrice: null,
             price: null,
             per: 'month',
@@ -129,7 +189,7 @@ export const recom = [
             other: 'Handset as low as $0',
             localData: 20
         },
-        mup: false
+        isMup: false
     }
 ];
 
@@ -162,7 +222,7 @@ export const otherRecom = [
             period: null,
             other: 'As low as $228'
         },
-        mup: false
+        isMup: false
     },
     {
         tags: [
@@ -190,7 +250,7 @@ export const otherRecom = [
             period: null,
             other: 'As low as $58'
         },
-        mup: false
+        isMup: false
     },
     {
         tags: [
@@ -220,7 +280,7 @@ export const otherRecom = [
             period: 24,
             other: null
         },
-        mup: false
+        isMup: false
     },
     {
         tags: [
@@ -248,7 +308,7 @@ export const otherRecom = [
             period: 24,
             other: null
         },
-        mup: false
+        isMup: false
     },
 ];
 
@@ -272,7 +332,7 @@ export const clrecom = [
         },
         starts: 4,
         plan: {
-            name:'Ultra Speed User Plan',
+            name: 'Ultra Speed User Plan',
             oriPrice: null,
             price: null,
             per: null,
@@ -281,9 +341,9 @@ export const clrecom = [
             localData: 20
         },
         payment: [
-            { type: 'point', clubpoint: 900, cash: null }, 
+            { type: 'point', clubpoint: 900, cash: null },
             { type: 'mix', clubpoint: 100, cash: 1680 }
         ],
-        mup: false
+        isMup: false
     },
 ];

@@ -7,11 +7,11 @@
     <mat-card style="border-radius:0px" *ngFor="let sub of shoppingCartService.subscribers">
         <div class="row">
             <div class="col-lg-7">
-                <b *ngIf="!sub.product.mup">({{sub.subscribers[0].desc}}) {{sub.subscribers[0].value}}</b>
-                <b *ngIf="sub.product.mup">({{sub.groupDesc}}) {{sub.groupName}}</b>
+                <b *ngIf="!sub.product.isMup">({{sub.subscribers[0].desc}}) {{sub.subscribers[0].value}}</b>
+                <b *ngIf="sub.product.isMup">({{sub.groupDesc}}) {{sub.groupName}}</b>
             </div>
             <div class="col-lg-5" style="text-align:right">
-                <img [src]="pic.group" *ngIf="sub.product.mup" (click)="config(sub.id,'group');op1.hide()"
+                <img [src]="pic.group" *ngIf="sub.product.isMup" (click)="config(sub.id,'group');op1.hide()"
                     class="btn-cart">
                 <img [src]="pic.config" (click)="config(sub.id);op1.hide()" class="btn-cart">
                 <img [src]="pic.vas" (click)="vas(sub.id);op1.hide()" class="btn-cart">
@@ -40,7 +40,7 @@
                 </div>
             </mat-card>
         </div>
-        <div *ngIf="sub.product.mup">
+        <div *ngIf="sub.product.isMup">
             <mat-card style="padding-top:5px;padding-bottom:0px;box-shadow: none;border-radius:0px"
                 *ngFor="let gs of sub.subscribers">
                 <div class="row">
