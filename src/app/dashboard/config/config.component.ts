@@ -60,22 +60,25 @@ export class ConfigComponent implements OnInit {
   }
 
   openDialog(): void {
+    console.log('this.serviceInstance:',this.serviceInstance)
     const dialogRef = this.dialog.open(NumberSelectorComponent, {
       width: '900px',
-      height: '400px',
+      //height: '400px',
       data: {
-
+        selectedNum: this.serviceInstance.value
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log("result:", result);
-      this.su.subscribers = this.su.subscribers.map((s) => {
-        if (s.id == this.serviceInstance.id) {
-          s.value = result;
-        }
-        return s;
-      });
+      if(result){
+        this.su.subscribers = this.su.subscribers.map((s) => {
+          if (s.id == this.serviceInstance.id) {
+            s.value = result;
+          }
+          return s;
+        });
+      }
     });
   }
   openMembersNumDialog(): void {

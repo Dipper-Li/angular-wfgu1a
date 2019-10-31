@@ -16,7 +16,7 @@ export class AddToCartComponent implements OnInit{
   contractPeriodList = [{label: '24Months', value: 24},{label: '12Months', value: 12}];
   internalStorageList = [{label: '256GB', value: '256'},{label: '128GB', value: '128'}];
   colorList = [{label: 'White', value: 'White'},{label: 'Black', value: 'Black'},{label: 'Silver', value: 'Silver'},{label: 'Gold', value: 'Gold'}];
-  contractPeriod = 24;
+  contractPeriod = 12;
   internalStorage = this.internalStorageList[0].value;
   color = this.colorList[0].value;
   localData = 10;
