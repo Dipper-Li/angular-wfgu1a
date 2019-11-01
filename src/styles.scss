@@ -8,7 +8,7 @@ body .ui-overlaypanel .ui-overlaypanel-content {
 
 //@import "../node_modules/primeng/resources/themes/nova-light/theme.css";
 //@import "../node_modules/primeng/resources/primeng.min.css";
-//@import url("../node_modules/primeicons/primeicons.css");
+@import url("../node_modules/primeicons/primeicons.css");
 @import url("../node_modules/primeng/resources/themes/nova-light/theme.css");
 @import url("../node_modules/primeng/resources/primeng.min.css");
 thead {
@@ -41,3 +41,46 @@ label {
   content: "\A";
   white-space: pre-line;
 }
+
+.btn-basic {
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.ui-steps .ui-steps-item {
+  width: 16.6%;
+}
+
+.ui-steps.steps-custom {
+  margin-bottom: 30px;
+}
+
+.ui-steps.steps-custom .ui-steps-item .ui-menuitem-link {
+  height: 10px;
+  padding: 0 1em;
+}
+
+.ui-steps.steps-custom .ui-steps-item .ui-steps-number {
+  background-color: #0081c2;
+  color: #FFFFFF;
+  display: inline-block;
+  width: 36px;
+  border-radius: 50%;
+  margin-top: -14px;
+  margin-bottom: 10px;
+}
+
+.ui-steps.steps-custom .ui-steps-item .ui-steps-title {
+  color: #555555;
+}
+
+// body .ui-steps:after {
+//   content: " ";
+//   border-top: 4px solid #7EA6E0;
+//   width: 100%;
+//   top: 45%;
+//   left: 0;
+//   display: block;
+//   position: absolute;
+// }

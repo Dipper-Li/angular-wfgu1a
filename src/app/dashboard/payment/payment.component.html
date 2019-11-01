@@ -111,6 +111,34 @@
                     </select>
                 </div>
             </div>
+            <div class='row br'>
+                <div class='col-lg-11 br'>
+                    <b>Subscriber and Actual Customer Relationship</b>
+                </div>
+            </div>
+            <div class='row'>
+                <br>
+                <div class='col-lg-12'>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th width="25%">Subscriber</th>
+                                <th width="25%">Customer</th>
+                                <th width="25%">Relationship</th>
+                                <th width="25%">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let i of [1]">
+                                <td width="25%">(new group subscriber) MUP group 1</td>
+                                <td width="25%">HKID Z123XXX(2) Miss Wong Tai Yan Brenda</td>
+                                <td width="25%">Me</td>
+                                <td><a>Remove</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             <div class='row'>
                 <br><br>
                 <div class='col-lg-11'>
@@ -233,7 +261,7 @@
             </div>
         </div>
     </mat-tab>
-    <mat-tab label="Sales Configure" [disabled]="this.configType=='group'">
+    <mat-tab label="Payment Info" [disabled]="this.configType=='group'">
         <div class="panel-body">
             <div class='row'>
                 <br>
@@ -250,7 +278,8 @@
             <div class='row'>
                 <br>
                 <div class='col-lg-12'>
-                    <button class="btn" style="padding-top:0px;padding-bottom:0px;margin-top: -3.5px;margin-left: 3px" disabled>
+                    <button class="btn" style="padding-top:0px;padding-bottom:0px;margin-top: -3.5px;margin-left: 3px"
+                        disabled>
                         Choose from existing<br>payment method
                     </button>
                 </div>

@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { AddToCartComponent } from '../add-to-cart/add-to-cart.component';
 import * as picture from '../../service/pic';
+import { AppCommon } from '../../app.common';
 export interface DialogData {
   product
 }
@@ -15,13 +16,13 @@ export class ProductComponent implements OnInit {
   @Input() product;
   @Input() showBtn:boolean = true;
   pic = picture;
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private appCommon: AppCommon) { }
   @Output() addToCart = new EventEmitter();
   ngOnInit() {
   }
   add(){
-    if(this.product.type=='vas'){
-      this.addToCart.emit(this.product);
+    if(this.product.detail.type=='vas'){
+      this.addToCart.emit(this.appCommon.copy(this.product));
     }else{
       this.openDialog();
     }
@@ -29,8 +30,9 @@ export class ProductComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(AddToCartComponent, {
       width: '850px',
+      height:'100%',
       data: {
-        product: this.product
+        product: this.appCommon.copy(this.product)
       }
     });
 

@@ -105,25 +105,23 @@
                 </mat-tab>
                 <mat-tab label="Fulfillment Configure">
                     <ng-container *ngIf="this.configType=='group'">
-                        <div class="text-muted">Send Top Up Alert to</div>
-                        <div class='row col-lg-12'>
-                            <div class='col-lg-3'>
+                        <div class="text-muted br">Send Top Up Alert to</div>
+                        <div class='row col-lg-3'>
                                 <select class="form-control">
                                     <option value="1">Primary+Members</option>
                                     <option value="2">Other</option>
                                 </select>
-                            </div>
                         </div>
                         <div class='row col-lg-9'><label></label></div>
                     </ng-container>
 
                     <ng-container *ngIf="this.configType!='group'">
                         <div class='row col-lg-3 br'>
-                            <label><input type="radio" value="nmn" name="numType" [(ngModel)]="numType">New Mobile
+                            <label><input type="radio" value="nmn" name="numType" [(ngModel)]="numType"> New Mobile
                                 Number</label>
                         </div>
                         <div class='row col-lg-9 br'>
-                            <label><input type="radio" value="mnp" name="numType" [(ngModel)]="numType">MNP</label>
+                            <label><input type="radio" value="mnp" name="numType" [(ngModel)]="numType"> MNP</label>
                         </div>
                         <ng-container #NMN *ngIf="numType=='nmn'">
                             <div class='row col-lg-3 br'>
@@ -202,7 +200,7 @@
                             <div class='row col-lg-12 br'>
                                 <div class="col-lg-4">
                                     <div class="text-muted">Number to transfer</div>
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" [(ngModel)]='serviceInstance.value' type="text">
 
                                 </div>
                                 <div class="col-lg-1">

@@ -1,19 +1,16 @@
-<div class="panel-body">
+<div mat-dialog-content class="panel-body">
     <div class='row'>
         <div class='col-lg-12'><b>New Number Selection</b></div>
         <div class='radio-button hidden-xs hidden-sm'>&nbsp;</div>
     </div>
     <div class='row'>
-        <div class='col-lg-2'>
-            <div class="text-muted">&nbsp;</div>
+        <div class='col-lg-2 br'>
             <label><input type="radio" name="numTypae" value="random"> Random</label>
         </div>
-        <div class='col-lg-2'>
-            <div class="text-muted">&nbsp;</div>
+        <div class='col-lg-2 br'>
             <label><input type="radio" name="numTypae" value="pattern"> Pattern</label>
         </div>
-        <div class='col-lg-4'>
-            <div class="text-muted">&nbsp;</div>
+        <div class='col-lg-4 br'>
             <input class="form-control">
         </div>
         <div class='col-lg-4'>
@@ -26,8 +23,8 @@
     </div>
     <div class='row br'>
         <div class='col-lg-12' style="text-align:right">
-            <button mat-button (click)="getNumList()" style='margin-right:10px'>Search</button>
-            <button mat-button (click)="getNumList()">Clear</button>
+            <button mat-button (click)="getNumList()" style='margin-right:10px' class="btn-basic">Search</button>
+            <button mat-button (click)="getNumList()" class="btn-basic">Clear</button>
         </div>
     </div>
 
@@ -36,9 +33,9 @@
             <div class="text-muted">Number List</div>
         </div>
     </div>
-    <div class='row br' *ngFor='let item of [].constructor(2);let i = index'>
-        <div class='col-lg-3' *ngFor='let num of [].constructor(4);let j = index'>
-            <button mat-button class="btn-num" [class.num-chosen]='selectedNum==(90000000+i*4+j)' (click)='selectedNum=(90000000+i*4+j)'>{{90000000+i*4+j}}</button>
+    <div class='row' *ngFor='let item of [].constructor(2);let i = index'>
+        <div class='col-lg-3 br' *ngFor='let num of [].constructor(4);let j = index'>
+            <button mat-button class="btn-basic" [class.num-chosen]='selectedNum==(90000000+i*4+j)' style='width:100%' (click)='selectedNum=(90000000+i*4+j)'>{{90000000+i*4+j}}</button>
         </div>
         
     </div>

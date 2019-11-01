@@ -193,8 +193,9 @@ export class ShoppingCartService {
     }
     if (su.vas != null && su.vas != undefined) {
       for (let v of su.vas) {
-        this.upfrontTotalDetail = this.upfrontTotalDetail + ' +$' + v.price;
-        this.upfrontTotalSum += v.price;
+        this.upfrontTotalDetail = this.upfrontTotalDetail + ' +$' + v.plan.price;
+        this.upfrontTotalSum += v.plan.price;
+        this.totalMonthlyRate = this.totalMonthlyRate + (this.totalMonthlyRate == '' ? '$' : ' +$') + v.plan.price;
       }
     }
     if (su.subscribers != null && su.subscribers.length > 0) {

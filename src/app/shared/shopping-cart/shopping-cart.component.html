@@ -30,7 +30,7 @@
             <mat-card style="padding-top:5px;padding-bottom:0px;box-shadow: none;border-radius:0px" *ngFor="let vas of sub.vas">
                 <div class="row">
                     <div class="col-lg-7" style="margin-top:10px">
-                        <div>Speed data package 10GB</div>
+                        <div>{{vas.plan.name}} {{vas.plan.localData?vas.plan.localData+'G':''}}</div>
                     </div>
                     <div class="col-lg-5" style="text-align:right">        
                         <img [src]="pic.remove" (click)="removeVas(vas.id)"
@@ -57,14 +57,14 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div>Offer</div>
+                        <div>MUP SIM Offer</div>
                     </div>
                 </div>
                 <div *ngIf="gs.vas!=undefined">
                         <mat-card style="padding-top:5px;padding-bottom:0px;box-shadow: none;border-radius:0px" *ngFor="let vas of gs.vas">
                             <div class="row">
                                 <div class="col-lg-7" style="margin-top:10px">
-                                    <div>Speed data package 10GB</div>
+                                        <div>{{vas.plan.name}} {{vas.plan.localData?vas.plan.localData+'G':''}}</div>
                                 </div>
                                 <div class="col-lg-5" style="text-align:right">        
                                     <img [src]="pic.remove" (click)="removeVas(vas.id)"

@@ -38,6 +38,7 @@ export class ConfigComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.sid = params.sid;
+      console.log('sid:',this.sid);
       this.configType = params.configType;
       this.su = this.appCommon.copy(this.shoppingCartService.findById(this.sid));
       this.gsId = params.gsId;
@@ -93,6 +94,7 @@ export class ConfigComponent implements OnInit {
       if(result){
         console.log("product:", result);
         this.shoppingCartService.addGroupSubscribers(this.sid,result);
+        this.shoppingCartService.updateSubscriber(this.su);
         this.router.navigate(['dashboard/config',{ sid: this.sid }]);
       }     
     });

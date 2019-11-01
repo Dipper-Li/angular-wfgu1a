@@ -60,6 +60,58 @@ export const categories = [
         isShow: true
     },
 ];
+export const vascategories = [
+    {
+        head: { key: 'Monthly Rate', value: 'Monthly Rate', label: 'Monthly Rate' },
+        items: [
+            { key: '$0 - $100', value: '$0 - $100', label: '$0 - $100', count: 2 },
+            { key: '$100 - $200', value: '$100 - $200', label: '$100 - $200', count: 1 },
+            { key: '$200 or above', value: '$200 or above', label: '$200 or above', count: 0 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+    {
+        head: { key: 'Redeem Club Point', value: 'Redeem Club Point', label: 'Redeem Club Point' },
+        items: [
+            { key: '0 - 1000', value: '0 - 1000', label: '0 - 1000', count: 32 },
+            { key: '1000 - 2000', value: '1000 - 2000', label: '1000 - 2000', count: 43 },
+            { key: '2000 or above', value: '2000 or above', label: '2000 or above', count: 43 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+    {
+        head: { key: 'Category', value: 'Category', label: 'Category' },
+        items: [
+            { key: 'Apple Care', value: 'Apple Care', label: 'Apple Care', count: 13 },
+            { key: 'Capacity Pass', value: 'Capacity Pass', label: 'Capacity Pass', count: 53 },
+            { key: 'Mobile Data Service', value: 'Mobile Data Service', label: 'Mobile Data Service', count: 4 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+    {
+        head: { key: 'Local Data', value: 'Local Data', label: 'Local Data' },
+        items: [
+            { key: '0 - 10GB', value: '0 - 10GB', label: '0 - 10GB', count: 31 },
+            { key: '10GB - 20GB', value: '10GB - 20GB', label: '10GB - 20GB', count: 54 },
+            { key: '20GB or above', value: '20GB or above', label: '20GB or above', count: 45 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+    {
+        head: { key: 'Contract Period', value: 'Contract Period', label: 'Contract Period' },
+        items: [
+            { key: '12 Months', value: '12 Months', label: '12 Months', count: 32 },
+            { key: '24 Months', value: '24 Months', label: '24 Months', count: 43 },
+            { key: '36 Months', value: '36 Months', label: '36 Months', count: 43 },
+        ],
+        parentKey: null,
+        isShow: true
+    },
+];
 export const recom = [
     {
         tags: [
@@ -192,7 +244,124 @@ export const recom = [
         isMup: false
     }
 ];
-
+export const vasrecom = [
+    {
+        tags: [
+            
+        ],
+        picture: pic.vas_item,
+        info: {
+            price: null,
+            clubPoint: null,
+            desc: null
+        },
+        detail: {
+            name: 'Speed Data Package',
+            type: 'vas',
+            descs: [
+                '10GB Local Data',
+            ]
+        },
+        starts: 4,
+        plan: {
+            name: 'Speed data package',
+            oriPrice: null,
+            price: 38,
+            per: 'month',
+            period: 24,
+            other: null,
+            localData: 10
+        },
+        isMup: false
+    },
+    {
+        tags: [
+            
+        ],
+        picture: pic.vas_item,
+        info: {
+            price: null,
+            clubPoint: null,
+            desc: null
+        },
+        detail: {
+            name: 'Speed Data Package',
+            type: 'vas',
+            descs: [
+                '20GB Local Data',
+            ]
+        },
+        starts: 4,
+        plan: {
+            name: 'Speed data package',
+            oriPrice: null,
+            price: 58,
+            per: 'month',
+            period: 24,
+            other: null,
+            localData: 20
+        },
+        isMup: false
+    },
+    {
+        tags: [
+            
+        ],
+        picture: pic.vas_item,
+        info: {
+            price: null,
+            clubPoint: null,
+            desc: null
+        },
+        detail: {
+            name: 'Speed Data Package',
+            type: 'vas',
+            descs: [
+                '40GB Local Data',
+            ]
+        },
+        starts: 4,
+        plan: {
+            name: 'Speed data package',
+            oriPrice: null,
+            price: 108,
+            per: 'month',
+            period: 24,
+            other: null,
+            localData: 40
+        },
+        isMup: false
+    },
+    {
+        tags: [
+            
+        ],
+        picture: pic.network_sms,
+        info: {
+            price: null,
+            clubPoint: null,
+            desc: null
+        },
+        detail: {
+            name: 'Inter-network SMS',
+            type: 'vas',
+            descs: [
+                '90 SMS',
+            ]
+        },
+        starts: 4,
+        plan: {
+            name: 'Inter-network SMS',
+            oriPrice: null,
+            price: 39,
+            per: 'month',
+            period: 24,
+            other: null,
+            localData: null
+        },
+        isMup: false
+    }
+]
 export const otherRecom = [
     {
         tags: [

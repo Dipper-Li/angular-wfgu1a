@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormControl } from '@angular/forms';
-import { AppCommon } from '../../app.common';
 import * as picture from '../../service/pic';
 export interface DialogData {
   product:any
@@ -25,17 +24,19 @@ export class AddToCartComponent implements OnInit{
   product;
   constructor(
     public dialogRef: MatDialogRef<AddToCartComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData, private appCommon: AppCommon) { 
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) { 
       this.dateStart.setHours(20,0,0,0);
       this.dateEnd.setHours(21,0,0,0);
-      this.product = appCommon.copy(data.product);
+      this.product =data.product;
+      this.setPrice(this.contractPeriod);
+      window.scroll(0, 0);
     }
   onNoClick(): void {
     this.dialogRef.close();
   }
 
   ngOnInit() {
-    this.setPrice(this.contractPeriod);
+    
   }
   setPrice(period){
     this.product.plan.period = period;  
