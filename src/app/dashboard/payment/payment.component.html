@@ -26,7 +26,7 @@
             <div class='row'>
                 <div class='col-lg-4'>
                     <div class="text-muted">Document Type</div>
-                    <select class="form-control" disabled>
+                    <select class="form-control" disabled [(ngModel)]='basicInfo.documentType'>
                         <option value=''>Pls Select</option>
                         <option value='1'>1</option>
                         <option value='2'>2</option>
@@ -36,7 +36,7 @@
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Document No. </div>
-                    <input class="form-control" disabled>
+                    <input class="form-control" disabled [(ngModel)]='basicInfo.documentNum'>
                 </div>
                 <div class='col-lg-4' disabled>
                     <div class="text-muted">Date of Birth</div>
@@ -63,11 +63,11 @@
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Family Name</div>
-                    <input class="form-control" disabled>
+                    <input class="form-control">
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Given Name</div>
-                    <input class="form-control" disabled>
+                    <input class="form-control">
                 </div>
             </div>
             <br>
@@ -78,11 +78,11 @@
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Contact Fixed Line No.</div>
-                    <input class="form-control" disabled>
+                    <input class="form-control">
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Contact Email Address</div>
-                    <input class="form-control" disabled>
+                    <input class="form-control">
                 </div>
             </div>
             <br>
@@ -133,7 +133,7 @@
                                 <td width="25%">(new group subscriber) MUP group 1</td>
                                 <td width="25%">HKID Z123XXX(2) Miss Wong Tai Yan Brenda</td>
                                 <td width="25%">Me</td>
-                                <td><a>Remove</a></td>
+                                <td><a>Edit</a></td>
                             </tr>
                         </tbody>
                     </table>

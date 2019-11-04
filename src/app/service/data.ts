@@ -127,6 +127,7 @@ export const recom = [
         detail: {
             name: 'Apple iPhone XS 256GB',
             type: 'offer',
+            skuCode:'31005',
             descs: [
                 'Ultra Speed User Plan',
                 'Upfront $8299 ',
@@ -159,6 +160,7 @@ export const recom = [
         },
         detail: {
             name: 'Apple iPhone XS 256GB',
+            skuCode:'31005',
             type: 'offer',
             descs: [
                 'Ultra Speed User Plan',
@@ -192,6 +194,7 @@ export const recom = [
         },
         detail: {
             name: 'Apple iPhone XS 256GB',
+            skuCode:'31005',
             type: 'offer',
             descs: [
                 'Ultra Speed User Plan',
@@ -226,6 +229,7 @@ export const recom = [
         },
         detail: {
             name: 'HuaweiP30Lite(6GB+28GB)',
+            skuCode:'31004',
             type: 'offer',
             descs: [
 
@@ -516,3 +520,26 @@ export const clrecom = [
         isMup: false
     },
 ];
+
+export const sim = [
+    {
+        type:'CU JOC CSL 64K SIMTRIO-H(C)',
+        chargeAmt:0,
+        waiveIndicator:'No',
+        waiveReason:'',
+        action:[
+            'Edit'
+        ],
+        skuCode:'2100141'
+    },
+    {
+        type:'CSL NFC AIO SIMTRIO-H(C)',
+        chargeAmt:0,
+        waiveIndicator:'No',
+        waiveReason:'',
+        action:[
+            'Edit'
+        ],
+        skuCode:'2100140'
+    }
+]

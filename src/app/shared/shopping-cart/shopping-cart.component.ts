@@ -41,6 +41,7 @@ export class ShoppingCartComponent implements OnInit {
     this.router.navigate(['dashboard/offerselection',param]);
   }
   checkout(){
+    console.log('this.subscribers:',this.subscribers);
     this.router.navigate(['dashboard/payment']);
   }
 

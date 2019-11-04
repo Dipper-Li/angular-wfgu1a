@@ -61,8 +61,8 @@ export class OfferselectionComponent implements OnInit {
   }
   search(criteria) {
     console.log(criteria);
-    this.recom = this.appCommon.copy(rc);
     if (this.isvas != 'Y') {
+      this.recom = this.appCommon.copy(rc);
       criteria.map((c) => {
         if (c.head.key == 'ismup') {
           this.recom = this.recom.map(r => {
@@ -72,6 +72,8 @@ export class OfferselectionComponent implements OnInit {
         }
         return c
       });
+    }else{
+      this.recom = this.appCommon.copy(vrc);
     }
   }
   close() {

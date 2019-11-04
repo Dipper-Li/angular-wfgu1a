@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
 
   items;
   activeIndex: number = 0;
+  hideCart = false;
   constructor(private router: Router, private route: ActivatedRoute,private _snackBar: MatSnackBar) {
 
   }
@@ -22,9 +23,11 @@ openSnackBar() {
   }
   ngOnInit() {
     this.activeIndex = this.route.firstChild?this.route.firstChild.snapshot.data['activeIndex']:0;
+    this.hideCart = this.route.firstChild.snapshot.data['hide'];
     let t = this.router.events.pipe(filter((event:RouterEvent): event is NavigationEnd =>event instanceof NavigationEnd));
     t.subscribe(event => {
       this.activeIndex = this.route.firstChild?this.route.firstChild.snapshot.data['activeIndex']:0;
+      this.hideCart = this.route.firstChild.snapshot.data['hide'];
     });
     this.items = [{
       label: 'Basic Info',
@@ -35,7 +38,7 @@ openSnackBar() {
 
     },
     {
-      label: 'Payment',
+      label: 'Customer & Payment',
 
     },
     {

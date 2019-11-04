@@ -52,7 +52,7 @@
 
 </div>
 <br>
-<div class='row'>
+<div class='row col-lg-12'>
     <div class='col-lg-12'>
         <p>Clubpoint in this account: <img [src]="pic.point" width="20px" height="20px" /> 391 -
             Clubpoint burned in this order: <img [src]="pic.point" width="20px" height="20px" /> 0 +
@@ -60,12 +60,12 @@
         </p>
     </div>
 </div>
-<div class='row'>
+<div class='row col-lg-12'>
     <div class='col-lg-12'>
         <p>Available Clubpoint: <img [src]="pic.point" width="20px" height="20px" /> 391</p>
     </div>
 </div>
-<div class="row">
+<div class="row col-lg-12">
     <mat-tab-group>
         <mat-tab>
             <ng-template mat-tab-label>
@@ -75,7 +75,7 @@
             <ng-container>
                 <div class='col-lg-2 col-md-3 col-xs-3' *ngFor='let r of clubrecom'>
                     <br>
-                    <app-product [product]="r" (addToCart)="addToCart($event)"></app-product>
+                    <app-product [showBtn]='false' [product]="r" (addToCart)="addToCart($event)"></app-product>
                 </div>
             </ng-container>
         </mat-tab>

@@ -5,8 +5,7 @@ import { ShoppingCartService } from '../../service/shopping-cart.service';
 import { NumberSelectorComponent } from '../../shared/number-selector/number-selector.component';
 import { AppCommon } from '../../app.common';
 import { MembersNumComponent } from '../../shared/members-num/members-num.component';
-import { switchMap } from 'rxjs/operators';
-import { isNullOrUndefined } from 'util';
+import { sim as simdata } from '../../service/data';
 @Component({
   selector: 'app-config',
   templateUrl: './config.component.html',
@@ -21,6 +20,7 @@ export class ConfigComponent implements OnInit {
   sid: any;
   configType: any;
   gsId:any;
+  sim = simdata;
   constructor(private router: Router, private route: ActivatedRoute, private shoppingCartService: ShoppingCartService, public dialog: MatDialog, private appCommon: AppCommon) {
     this.cars = [
       { label: 'Audi', value: 'Audi' },
@@ -94,7 +94,7 @@ export class ConfigComponent implements OnInit {
       if(result){
         console.log("product:", result);
         this.shoppingCartService.addGroupSubscribers(this.sid,result);
-        this.shoppingCartService.updateSubscriber(this.su);
+        //this.shoppingCartService.updateSubscriber(this.su);
         this.router.navigate(['dashboard/config',{ sid: this.sid }]);
       }     
     });

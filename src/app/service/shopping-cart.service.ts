@@ -29,7 +29,7 @@ export class ShoppingCartService {
       subscriber['groupName'] = 'MUP group 1';
       subscriber['subscribers'] = [];
     } else {
-      subscriber['subscribers'] = [{ id: this.getRandomNum(), desc: 'new subscriber', value: 'service number 1' }];
+      subscriber['subscribers'] = [{ id: this.getRandomNum(), desc: 'new subscriber', value: 'service number 1',sim:{type:''} }];
     }
     this.subscribers.push(subscriber);
     console.log("service:", this.subscribers);
@@ -99,10 +99,10 @@ export class ShoppingCartService {
     return s;
   }
 
-  updateSubscriber(subscriber) {
+  updateSubscriber(su) {
     this.subscribers = this.subscribers.map((s) => {
-      if (s.id == subscriber.id) {
-        return subscriber;
+      if (s.id == su.id) {
+        return su;
       } else {
         return s;
       }
@@ -121,7 +121,7 @@ export class ShoppingCartService {
         //su['subscribers'] = groupSubscribers;
         for (let i = 0; i < extra; i++) {
           count += 1;
-          let gs = { id: this.getRandomNum(), desc: 'new subscriber', value: `service number ${count}` };
+          let gs = { id: this.getRandomNum(), desc: 'new subscriber', value: `service number ${count}`, sim:{type:''} };
           su.subscribers.push(gs);
         }
       }

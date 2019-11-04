@@ -19,13 +19,13 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let i of [1,2]">
-                        <td>Sim Card</td>
-                        <td>C-SIM</td>
-                        <td>2100141</td>
-                        <td>CSL 64K USIM SIMTRIO</td>
-                        <td>1204</td>
-                        <td>1</td>
+                    <tr *ngFor="let p of phyResources">
+                        <td>{{p.resourceType}}</td>
+                        <td>{{p.resourceName}}</td>
+                        <td>{{p.skuCode}}</td>
+                        <td>{{p.skuName}}</td>
+                        <td>{{p.avaQty}}</td>
+                        <td>{{p.qty}}</td>
                     </tr>
                 </tbody>
             </table>

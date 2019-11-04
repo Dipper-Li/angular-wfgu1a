@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ShoppingCartService } from 'src/app/service/shopping-cart.service';
 
 @Component({
   selector: 'app-payment',
@@ -7,8 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  basicInfo;
+  constructor(private router: Router, private shoppingCartService: ShoppingCartService) { 
+    this.basicInfo = this.shoppingCartService.getBasicInfo()
+  }
 
   ngOnInit() {
   }

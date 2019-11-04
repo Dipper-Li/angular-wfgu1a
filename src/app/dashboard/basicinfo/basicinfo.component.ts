@@ -32,43 +32,9 @@ export class BasicinfoComponent implements OnInit {
     referrerName: [{value:'',disabled:true}],
     arr: [['']]
   });
-  // {
-  //   orderInformation:{
-  //     orderNo:'54585454353',
-  //     orderNature:'New'
-  //   },
-  //   customerInformation:{
-  //     usage:'individual',
-  //     documentType:'',
-  //     documentNum:'',
-  //     customerName:'',
-  //     contactMobileNum:{
-  //       prefix:'852',
-  //       num:'93443231'
-  //     },
-  //     contactFixedLineNum:'24343424',
-  //     contactEmailAddress: '',
-  //     clubMembershipId:'6546546352',
-  //   },
-  //   salesInformation:{
-  //     staffNum:'T00423444',
-  //     staffName:'GIGI LEE',
-  //     contactNum:'28843321',
-  //     referrer:'',
-  //     referrerName:'',
-  //   }
-  // }
   constructor(private http: HttpClient,private fb: FormBuilder, private router: Router, private shoppingCartService: ShoppingCartService,private _snackBar: MatSnackBar) {
-    //this.basicInfo = this.shoppingCartService.getBasicInfo();
     console.log('this.basicInfo:',this.basicInfo);
     this.basicInfo.patchValue(this.shoppingCartService.getBasicInfo());
-    // this.http.get('http://localhost:8080/getHerosa',{observe:'response'}).pipe(
-    //   catchError(this.t)
-    // ).subscribe((data)=>{
-    // console.log('data:',data);
-    // },error=>{
-    //   console.error('error:',error);
-    // });
   }
   openSnackBar() {
     this._snackBar.open('test','', {

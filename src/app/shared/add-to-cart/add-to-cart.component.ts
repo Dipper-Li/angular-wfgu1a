@@ -22,6 +22,12 @@ export class AddToCartComponent implements OnInit{
   dateStart = new Date();
   dateEnd = new Date();
   product;
+  skuColorCode = {
+    'White':'1',
+    'Black':'2',
+    'Silver':'3',
+    'Gold':'4',
+  }
   constructor(
     public dialogRef: MatDialogRef<AddToCartComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) { 
@@ -55,6 +61,7 @@ export class AddToCartComponent implements OnInit{
       contractPeriod:this.contractPeriod,
       internalStorage: this.internalStorage,
       color: this.color,
+      skuCode: this.product.detail.skuCode+this.skuColorCode[this.color],
       //localData: this.localData,
       dateStart:this.dateStart,
       dateEnd:this.dateEnd

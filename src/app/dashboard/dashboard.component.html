@@ -4,7 +4,7 @@
                 <p-steps [model]="items" [(activeIndex)]="activeIndex"></p-steps>
             <!-- <app-add-to-cart></app-add-to-cart> -->
         </div>
-        <div class="pull-right" *ngIf="activeIndex==1">
+        <div class="pull-right" *ngIf="activeIndex==1&&hideCart==false">
             <app-shopping-cart></app-shopping-cart>
         </div>
     </div>
