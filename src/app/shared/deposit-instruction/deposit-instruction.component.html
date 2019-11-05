@@ -1,0 +1,56 @@
+<div class="row">
+    <div class='col-lg-3'>Upfront Total: </div>
+    <div class='col-lg-9'>{{shoppingCartService.upfrontTotalDetail}} = ${{shoppingCartService.upfrontTotalSum}}</div>
+</div>
+<div class="row">
+    <div class='col-lg-3'>Deposit:</div>
+    <div class='col-lg-9'>$0</div>
+</div>
+<div class="row">
+
+    <div class='col-lg-3'>Total: </div>
+    <div class='col-lg-9'>${{shoppingCartService.upfrontTotalSum}}</div>
+
+</div>
+<div class="row">
+    <div class='col-lg-3'>Clubpoint Required: </div>
+    <div class='col-lg-9'>{{shoppingCartService.clubpointRequired}}</div>
+</div>
+<div class='row br' style='padding-bottom: 5px'>
+    <div class='col-lg-10'><b>Upfront Payment / Deposit Instruction</b></div>
+    <div class='col-lg-2'>
+        <button mat-stroked-button (click)="add()" class='pull-right'>Add</button>
+    </div>
+</div>
+<div class="row">
+    <div class='col-lg-12'>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Charge Amt</th>
+                    <th>Card Number</th>
+                    <th>Status</th>
+                    <th>Reference</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ins of instructions;let i=index">
+                    <td>
+                        {{ins.type}}
+                    </td>
+                    <td>{{ins.amount}}</td>
+                    <td>{{ins.cardNum}}</td>
+                    <td>Pending to pay</td>
+                    <td></td>
+                    <td>
+                        <a (click)='edit(ins,i)'>Edit</a>
+                        &nbsp;
+                        <a (click)='remove(i)'>Remove</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

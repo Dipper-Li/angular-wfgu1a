@@ -42,12 +42,6 @@ label {
   white-space: pre-line;
 }
 
-.btn-basic {
-  background-color: white;
-  color: black;
-  border: 1px solid #ccc;
-}
-
 .ui-steps .ui-steps-item {
   width: 16.6%;
 }
@@ -73,6 +67,10 @@ label {
 
 .ui-steps.steps-custom .ui-steps-item .ui-steps-title {
   color: #555555;
+}
+
+[blue]{
+  background-color: #3D8BCD;color:white
 }
 
 // body .ui-steps:after {

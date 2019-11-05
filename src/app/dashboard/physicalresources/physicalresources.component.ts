@@ -1,7 +1,7 @@
 import { product } from './../../service/pic';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ShoppingCartService } from 'src/app/service/shopping-cart.service';
+import { ShoppingCartService } from '../../service/shopping-cart.service';
 
 @Component({
   selector: 'app-physicalresources',

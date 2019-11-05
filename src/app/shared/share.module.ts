@@ -15,8 +15,10 @@ import { NumberSelectorComponent } from './number-selector/number-selector.compo
 import { MembersNumComponent } from './members-num/members-num.component';
 import { FilterMenuComponent } from './filter-menu/filter-menu.component';
 import { DemoMaterialModule } from '../material-module';
+import { DepositInstructionComponent } from './deposit-instruction/deposit-instruction.component';
+import { PaymentMeansComponent } from './payment-means/payment-means.component';
 @NgModule({
-  declarations: [BubbleComponent, ProductComponent, ExpansionMenuComponent, ShoppingCartComponent,  AddToCartComponent, NumberSelectorComponent, MembersNumComponent, FilterMenuComponent],
+  declarations: [BubbleComponent, ProductComponent, ExpansionMenuComponent, ShoppingCartComponent,  AddToCartComponent, NumberSelectorComponent, MembersNumComponent, FilterMenuComponent, DepositInstructionComponent, PaymentMeansComponent],
   imports: [
     CalendarModule,
     SliderModule,
@@ -27,7 +29,7 @@ import { DemoMaterialModule } from '../material-module';
     DropdownModule,
     FormsModule,
   ],
-  entryComponents: [ AddToCartComponent, NumberSelectorComponent, MembersNumComponent, ProductComponent ],
+  entryComponents: [ AddToCartComponent, NumberSelectorComponent, MembersNumComponent, ProductComponent, DepositInstructionComponent, PaymentMeansComponent ],
   exports:[BubbleComponent, ProductComponent, ExpansionMenuComponent, ShoppingCartComponent, FilterMenuComponent ]
 })
 export class ShareModule { }
