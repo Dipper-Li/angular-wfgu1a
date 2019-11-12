@@ -543,3 +543,16 @@ export const sim = [
         skuCode:'2100140'
     }
 ]
+
+export const engagementResponse = [
+    {
+        orderNature: 'new',
+        touchedOffer:'HuaweiP30Lite(6GB+28GB)',
+        engagementResponse:null
+    },
+    {
+        orderNature: 'new',
+        touchedOffer:'Apple iPhone XS 256GB',
+        engagementResponse:null
+    }
+];

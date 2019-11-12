@@ -14,7 +14,7 @@ const routes: Routes = [
     path: '', component: DashboardComponent, children: [
 
       { path: 'basicinfo', component: BasicinfoComponent, data: { activeIndex: 0 } },
-      { path: 'offerselection', component: OfferselectionComponent, data: { activeIndex: 1, hide:false} },
+      { path: 'offerselection', component: OfferselectionComponent, data: { activeIndex: 1} },
       { path: 'config', component: ConfigComponent, data: { activeIndex: 1 } },
       { path: 'payment', component: PaymentComponent, data: { activeIndex: 2 } },
       { path: 'physicalresources', component: PhysicalresourcesComponent, data: { activeIndex: 3 } },

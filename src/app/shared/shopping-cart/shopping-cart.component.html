@@ -1,5 +1,5 @@
 
-<img [src]="pic.shopping_cart" width="40px" height="40px" (click)="op1.toggle($event);getUpfrontTotal()">
+<img [src]="pic.shopping_cart" style='width:40px;height:40px;margin-left: 18px' width="40px" height="40px" (click)="op1.toggle($event);getUpfrontTotal()">
 <app-bubble [text]="this.shoppingCartService.getCount()"></app-bubble>
 <p-overlayPanel #op1 styleClass="padding-0" [style]="{'width':'700px'}">
     <mat-card style="border-radius:0px">

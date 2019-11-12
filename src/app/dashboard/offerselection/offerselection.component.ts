@@ -1,10 +1,13 @@
+import { UpdateEngagementComponent } from './../../shared/update-engagement/update-engagement.component';
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ShoppingCartService } from '../../service/shopping-cart.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import * as picture from '../../service/pic';
 import { categories as cate, vascategories as vcate } from '../../service/data';
-import { recom as rc, otherRecom, clrecom, vasrecom as vrc } from '../../service/data';
+import { recom as rc, otherRecom, clrecom, vasrecom as vrc, engagementResponse as er } from '../../service/data';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+
 import { AppCommon } from '../../app.common';
 @Component({
   selector: 'app-offerselection',
@@ -23,7 +26,8 @@ export class OfferselectionComponent implements OnInit {
   otrecom: any;
   clubrecom: any;
   vasrecom: any;
-  constructor(private router: Router, private shoppingCartService: ShoppingCartService, private route: ActivatedRoute, private _snackBar: MatSnackBar, private appCommon: AppCommon) {
+  engagementResponse = er;
+  constructor(private router: Router, private shoppingCartService: ShoppingCartService, private route: ActivatedRoute, private _snackBar: MatSnackBar, private appCommon: AppCommon, public dialog: MatDialog) {
     window.scroll(0, 0);
   }
   ngOnInit() {
@@ -31,13 +35,14 @@ export class OfferselectionComponent implements OnInit {
     this.clubrecom = clrecom;
     this.route.params.subscribe(params => {
       this.isvas = params.isvas;
-      this.id = params.id;  
+      this.id = params.id;
+      this.search();
       if(this.isvas == 'Y'){
         this.categories = this.appCommon.copy(vcate);
-        this.recom = vrc;
+        //this.recom = vrc;
       }else{
         this.categories = this.appCommon.copy(cate);
-        this.recom = rc;
+        //this.recom = rc;
       }  
     });
   }
@@ -59,22 +64,51 @@ export class OfferselectionComponent implements OnInit {
       duration: 1500,
     });
   }
-  search(criteria) {
+  search(criteria?) {
     console.log(criteria);
+    this.criteria = criteria;
     if (this.isvas != 'Y') {
       this.recom = this.appCommon.copy(rc);
-      criteria.map((c) => {
-        if (c.head.key == 'ismup') {
-          this.recom = this.recom.map(r => {
-            r.isMup = c.item.value;
-            return r;
-          })
-        }
-        return c
-      });
+      if(criteria){
+        criteria.map((c) => {
+          if (c.head.key == 'ismup') {
+            this.recom = this.recom.map(r => {
+              r.isMup = c.item.value;
+              return r;
+            })
+          }
+          return c
+        });
+      }     
     }else{
       this.recom = this.appCommon.copy(vrc);
     }
+    this.updateEngagement();
+  }
+  updateEngagement(){
+    this.recom = this.recom.filter((item)=>{
+      let flag = true;
+      for(let r of this.engagementResponse){
+        if(r.engagementResponse=='no'&&r.touchedOffer==item.detail.name){
+          flag = false;
+        }
+      }
+      return flag;
+    });
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(UpdateEngagementComponent, {
+      minWidth: '90vw',
+      disableClose:true,
+      data: {
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("result:", result);
+      this.engagementResponse = result;
+      this.search(this.criteria);
+    });
   }
   close() {
     this.router.navigate(['dashboard/offerselection']);

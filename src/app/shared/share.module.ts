@@ -17,8 +17,9 @@ import { FilterMenuComponent } from './filter-menu/filter-menu.component';
 import { DemoMaterialModule } from '../material-module';
 import { DepositInstructionComponent } from './deposit-instruction/deposit-instruction.component';
 import { PaymentMeansComponent } from './payment-means/payment-means.component';
+import { UpdateEngagementComponent } from './update-engagement/update-engagement.component';
 @NgModule({
-  declarations: [BubbleComponent, ProductComponent, ExpansionMenuComponent, ShoppingCartComponent,  AddToCartComponent, NumberSelectorComponent, MembersNumComponent, FilterMenuComponent, DepositInstructionComponent, PaymentMeansComponent],
+  declarations: [BubbleComponent, ProductComponent, ExpansionMenuComponent, ShoppingCartComponent,  AddToCartComponent, NumberSelectorComponent, MembersNumComponent, FilterMenuComponent, DepositInstructionComponent, PaymentMeansComponent, UpdateEngagementComponent],
   imports: [
     CalendarModule,
     SliderModule,
@@ -29,7 +30,7 @@ import { PaymentMeansComponent } from './payment-means/payment-means.component';
     DropdownModule,
     FormsModule,
   ],
-  entryComponents: [ AddToCartComponent, NumberSelectorComponent, MembersNumComponent, ProductComponent, DepositInstructionComponent, PaymentMeansComponent ],
-  exports:[BubbleComponent, ProductComponent, ExpansionMenuComponent, ShoppingCartComponent, FilterMenuComponent ]
+  entryComponents: [ AddToCartComponent, NumberSelectorComponent, MembersNumComponent, ProductComponent, DepositInstructionComponent, PaymentMeansComponent, UpdateEngagementComponent ],
+  exports:[BubbleComponent, ProductComponent, ExpansionMenuComponent, ShoppingCartComponent, FilterMenuComponent, UpdateEngagementComponent ]
 })
 export class ShareModule { }

@@ -1,7 +1,19 @@
+<div>
+    <div class="pull-right">
+        <app-shopping-cart></app-shopping-cart>
+    </div>
+    <div class="pull-right">
+        <!-- <app-update-engagement></app-update-engagement> -->
+        <button style='line-height:20px;padding-left:2px;padding-right:2px' (click)='openDialog()' mat-stroked-button>
+        Update Engagement<br>Result
+  </button>
+    </div>
+</div>
 <div class="panel-body">
     <div class='row col-lg-11 col-md-12'>
         <div class='col-lg-3 col-md-3 col-sm-4 col-xs-12'>
             <app-filter-menu (search)="search($event)" [categories]="categories"></app-filter-menu>
+            <button mat-stroked-button>Help me choose</button>
         </div>
         <div class='col-lg-9 col-md-8 col-sm-8 col-xs-12' *ngIf='this.isvas!="Y"'>
             <div class='row'>
@@ -29,12 +41,12 @@
         </div>
         <div class='col-lg-9 col-md-8 col-sm-8 col-xs-12' *ngIf='this.isvas=="Y"'>
             <div class='row'>
-                    <div class='row col-lg-5'>
-                <select class="form-control">
-                    <option [value]="general">General</option>
-                    <option [value]="mandatory">Choose any 2 from list (mandatory)</option>
-                </select>
-            </div>
+                <div class='row col-lg-5'>
+                    <select class="form-control">
+                        <option [value]="general">General</option>
+                        <option [value]="mandatory">Choose any 2 from list (mandatory)</option>
+                    </select>
+                </div>
             </div>
             <div class='row'>
                 <div class='row col-lg-8'>VAS Recommendation for (new subscriber) 90000001<br></div>
