@@ -26,7 +26,7 @@
             <br>
             <div class='row'>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Document Type</div>
+                    <div class="text-muted" mandatory>Document Type</div>
                     <select class="form-control" disabled [(ngModel)]='basicInfo.documentType'>
                         <option value=''>Pls Select</option>
                         <option value='HKID'>HKID</option>
@@ -35,11 +35,11 @@
                     </select>
                 </div>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Document No. </div>
+                    <div class="text-muted" mandatory>Document No. </div>
                     <input class="form-control" disabled [(ngModel)]='basicInfo.documentNum'>
                 </div>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Date of Birth</div>
+                    <div class="text-muted" mandatory>Date of Birth</div>
                     <p-calendar dateFormat='d M yy' inputStyleClass='form-control' [style]="{'width':'100%'}"
                         [inputStyle]="{'width':'100%','border-color':'#ccc'}"></p-calendar>
                 </div>
@@ -47,7 +47,7 @@
             <br>
             <div class='row'>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Title</div>
+                    <div class="text-muted" mandatory>Title</div>
                     <select class="form-control">
                         <option value=''>Pls Select</option>
                         <option value='Miss' selected>Miss</option>
@@ -56,18 +56,18 @@
                     </select>
                 </div>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Family Name</div>
+                    <div class="text-muted" mandatory>Family Name</div>
                     <input class="form-control" value='Wong'>
                 </div>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Given Name</div>
+                    <div class="text-muted" mandatory>Given Name</div>
                     <input class="form-control" value='Tai Yan Brenda'>
                 </div>
             </div>
             <br>
             <div class='row'>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Contact Mobile No.</div>
+                    <div class="text-muted" mandatory>Contact Mobile No.</div>
                     <input class="form-control" [(ngModel)]='basicInfo.num'>
                 </div>
                 <div class='col-lg-4'>
@@ -75,7 +75,7 @@
                     <input class="form-control" [(ngModel)]='basicInfo.contactFixedLineNum'>
                 </div>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Contact Email Address</div>
+                    <div class="text-muted" mandatory>Contact Email Address</div>
                     <input class="form-control" [(ngModel)]='basicInfo.contactEmailAddress'>
                 </div>
             </div>
@@ -97,7 +97,7 @@
             <div class='row'>
                 <br>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Language</div>
+                    <div class="text-muted" mandatory>Language</div>
                     <select class="form-control">
                         <option value=''>Pls Select</option>
                         <option value='eng' selected>English</option>
@@ -310,11 +310,11 @@
             <div class='row'>
                 <br>
                 <div class='col-lg-3'>
-                    <div class="text-muted">Card Holder Name</div>
+                    <div class="text-muted" mandatory>Card Holder Name</div>
                     <input class="form-control" value='BRENDA WONG'>
                 </div>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Card Holder Document Type</div>
+                    <div class="text-muted" mandatory>Card Holder Document Type</div>
                     <select class="form-control" [(ngModel)]='basicInfo.documentType'>
                         <option value=''>Pls Select</option>
                         <option value='HKID'>HKID</option>
@@ -323,14 +323,14 @@
                     </select>
                 </div>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Card Holder Document No.</div>
+                    <div class="text-muted" mandatory>Card Holder Document No.</div>
                     <input class="form-control" [(ngModel)]='basicInfo.documentNum'>
                 </div>
             </div>
             <div class='row'>
                 <br>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Credit Card Type</div>
+                    <div class="text-muted" mandatory>Credit Card Type</div>
                     <select class="form-control">
                         <option value=''>Pls Select</option>
                         <option value='VISA' selected>VISA</option>
@@ -338,7 +338,7 @@
                     </select>
                 </div>
                 <div class='col-lg-4'>
-                    <div class="text-muted">Credit Card No.</div>
+                    <div class="text-muted" mandatory>Credit Card No.</div>
                     <input class="form-control" value='4111********1111'>
                 </div>
                 <div class='col-lg-3'>

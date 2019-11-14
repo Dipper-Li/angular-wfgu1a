@@ -26,11 +26,11 @@
     </div>
     <div class='row br'>
         <div class='col-lg-3'>
-            <div class='text-muted'>Card Holder Name</div>
+            <div class='text-muted' mandatory>Card Holder Name</div>
             <input class='form-control' [(ngModel)]='detail.name'>
         </div>
         <div class='col-lg-4'>
-            <div class='text-muted'>Card Holder Document Type </div>
+            <div class='text-muted' mandatory>Card Holder Document Type </div>
             <select class="form-control" [(ngModel)]='detail.docType'>
                 <option value='HKID'>HKID</option>
                 <option value='Travel'>Travel</option>
@@ -38,20 +38,20 @@
             </select>
         </div>
         <div class='col-lg-4'>
-            <div class='text-muted'>Card Holder Document No. </div>
+            <div class='text-muted' mandatory>Card Holder Document No. </div>
             <input class='form-control' [(ngModel)]='detail.docNum'>
         </div>
     </div>
     <div class='row br'>
         <div class='col-lg-4'>
-            <div class='text-muted'>Credit Card Type</div>
+            <div class='text-muted' mandatory>Credit Card Type</div>
             <select class="form-control" [(ngModel)]='detail.cardType'>
                 <option value='VISA'>VISA</option>
                 <option value='Master'>Master</option>
             </select>
         </div>
         <div class='col-lg-4'>
-            <div class='text-muted'>Credit Card No. </div>
+            <div class='text-muted' mandatory>Credit Card No. </div>
             <input class='form-control' [(ngModel)]='detail.cardNum'>
         </div>
     </div>

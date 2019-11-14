@@ -125,7 +125,7 @@
         <div class='row'>
             <br>
             <div class='col-lg-4'>
-                <div class="text-muted">Title</div>
+                <div class="text-muted" mandatory>Title</div>
                 <select class="form-control">
                     <option value=''>Pls Select</option>
                     <option value='Miss' selected>Miss</option>
@@ -134,18 +134,18 @@
                 </select>
             </div>
             <div class='col-lg-4'>
-                <div class="text-muted">Family Name</div>
+                <div class="text-muted" mandatory>Family Name</div>
                 <input class="form-control" value='WONG'>
             </div>
             <div class='col-lg-4'>
-                <div class="text-muted">Given Name</div>
+                <div class="text-muted" mandatory>Given Name</div>
                 <input class="form-control" value='KAY'>
             </div>
         </div>
         <div class='row'>
             <br>
             <div class='col-lg-4'>
-                <div class="text-muted">Contact Mobile No.</div>
+                <div class="text-muted" mandatory>Contact Mobile No.</div>
                 <input class="form-control" value='93443231'>
             </div>
             <div class='col-lg-4'>
@@ -203,28 +203,28 @@
         <div class='row'>
             <br>
             <div class='col-lg-4'>
-                <div class="text-muted">Flat</div>
+                <div class="text-muted" mandatory>Flat</div>
                 <select class="form-control">
                     <option value=''>Pls Select</option>
                     <option value='1' selected>F</option>
                 </select>
             </div>
             <div class='col-lg-4'>
-                <div class="text-muted">Floor</div>
+                <div class="text-muted" mandatory>Floor</div>
                 <input class="form-control" value='5'>
             </div>
         </div>
         <div class='row'>
             <br>
             <div class='col-lg-4'>
-                <div class="text-muted">Block</div>
+                <div class="text-muted" mandatory>Block</div>
                 <select class="form-control">
                     <option value=''>Pls Select</option>
                     <option value='1' selected>C</option>
                 </select>
             </div>
             <div class='col-lg-4'>
-                <div class="text-muted">Building</div>
+                <div class="text-muted" mandatory>Building</div>
                 <select class="form-control">
                     <option value=''>Pls Select</option>
                     <option value='1' selected>Lucky Garden</option>
@@ -234,14 +234,14 @@
         <div class='row'>
             <br>
             <div class='col-lg-4'>
-                <div class="text-muted">Street No.</div>
+                <div class="text-muted" mandatory>Street No.</div>
                 <select class="form-control">
                     <option value=''>Pls Select</option>
                     <option value='1' selected>333</option>
                 </select>
             </div>
             <div class='col-lg-4'>
-                <div class="text-muted">Street Name</div>
+                <div class="text-muted" mandatory>Street Name</div>
                 <select class="form-control">
                     <option value=''>Pls Select</option>
                     <option value='1' selected>Wealthy Road East</option>
@@ -251,14 +251,14 @@
         <div class='row'>
             <br>
             <div class='col-lg-4'>
-                <div class="text-muted">District</div>
+                <div class="text-muted" mandatory>District</div>
                 <select class="form-control">
                     <option value=''>Pls Select</option>
                     <option value='1' selected>Kowloon City</option>
                 </select>
             </div>
             <div class='col-lg-4'>
-                <div class="text-muted">Area</div>
+                <div class="text-muted" mandatory>Area</div>
                 <select class="form-control">
                     <option value=''>Pls Select</option>
                     <option value='1' selected>Kowloon</option>
@@ -275,12 +275,12 @@
         <div class='row'>
             <br>
             <div class='col-lg-4'>
-                <div class="text-muted">Delivery Date</div>
+                <div class="text-muted" mandatory>Delivery Date</div>
                 <p-calendar [(ngModel)]='dateNow' dateFormat='d M yy' inputStyleClass='form-control'
                     [style]="{'width':'100%'}" [inputStyle]="{'width':'100%','border-color':'#ccc'}"></p-calendar>
             </div>
             <div class='col-lg-4'>
-                <div class="text-muted">Delivery Time</div>
+                <div class="text-muted" mandatory>Delivery Time</div>
                 <select class="form-control">
                     <option *ngFor='let item of [].constructor(6);let i=index' value=''>
                         {{(dateTime.getTime()+60*60*2*1000*i)|date: 'HH:mm'}} -
