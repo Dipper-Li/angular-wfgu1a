@@ -127,7 +127,7 @@ export const recom = [
         detail: {
             name: 'Apple iPhone XS 256GB',
             type: 'offer',
-            skuCode:'31005',
+            skuCode: '31005',
             descs: [
                 'Ultra Speed User Plan',
                 'Upfront $8299 ',
@@ -160,7 +160,7 @@ export const recom = [
         },
         detail: {
             name: 'Apple iPhone XS 256GB',
-            skuCode:'31005',
+            skuCode: '31005',
             type: 'offer',
             descs: [
                 'Ultra Speed User Plan',
@@ -194,7 +194,7 @@ export const recom = [
         },
         detail: {
             name: 'Apple iPhone XS 256GB',
-            skuCode:'31005',
+            skuCode: '31005',
             type: 'offer',
             descs: [
                 'Ultra Speed User Plan',
@@ -229,7 +229,7 @@ export const recom = [
         },
         detail: {
             name: 'HuaweiP30Lite(6GB+28GB)',
-            skuCode:'31004',
+            skuCode: '31004',
             type: 'offer',
             descs: [
 
@@ -251,7 +251,7 @@ export const recom = [
 export const vasrecom = [
     {
         tags: [
-            
+
         ],
         picture: pic.vas_item,
         info: {
@@ -280,7 +280,7 @@ export const vasrecom = [
     },
     {
         tags: [
-            
+
         ],
         picture: pic.vas_item,
         info: {
@@ -309,7 +309,7 @@ export const vasrecom = [
     },
     {
         tags: [
-            
+
         ],
         picture: pic.vas_item,
         info: {
@@ -338,7 +338,7 @@ export const vasrecom = [
     },
     {
         tags: [
-            
+
         ],
         picture: pic.network_sms,
         info: {
@@ -523,36 +523,148 @@ export const clrecom = [
 
 export const sim = [
     {
-        type:'CU JOC CSL 64K SIMTRIO-H(C)',
-        chargeAmt:0,
-        waiveIndicator:'No',
-        waiveReason:'',
-        action:[
+        type: 'CU JOC CSL 64K SIMTRIO-H(C)',
+        chargeAmt: 0,
+        waiveIndicator: 'No',
+        waiveReason: '',
+        action: [
             'Edit'
         ],
-        skuCode:'2100141'
+        skuCode: '2100141'
     },
     {
-        type:'CSL NFC AIO SIMTRIO-H(C)',
-        chargeAmt:0,
-        waiveIndicator:'No',
-        waiveReason:'',
-        action:[
+        type: 'CSL NFC AIO SIMTRIO-H(C)',
+        chargeAmt: 0,
+        waiveIndicator: 'No',
+        waiveReason: '',
+        action: [
             'Edit'
         ],
-        skuCode:'2100140'
+        skuCode: '2100140'
     }
 ]
 
 export const engagementResponse = [
     {
         orderNature: 'new',
-        touchedOffer:'HuaweiP30Lite(6GB+28GB)',
-        engagementResponse:null
+        touchedOffer: 'HuaweiP30Lite(6GB+28GB)',
+        engagementResponse: null
     },
     {
         orderNature: 'new',
-        touchedOffer:'Apple iPhone XS 256GB',
-        engagementResponse:null
+        touchedOffer: 'Apple iPhone XS 256GB',
+        engagementResponse: null
     }
 ];
+
+export const relationship = [
+    {
+        subscriber: '(new group subscriber) MUP group 1',
+        customer: 'HKID Z123XXX(2) Miss Wong Tai Yan Brenda',
+        relationship: 'Me',
+        action: ['Edit']
+    },
+    {
+        subscriber: '(new subscriber) 90000002',
+        customer: 'paul@yahoo.com',
+        relationship: 'Son',
+        action: ['Edit']
+    },
+    {
+        subscriber: '(new subscriber) 90000003',
+        customer: 'may@netvigator.com',
+        relationship: 'Daughter',
+        action: ['Edit']
+    }
+]
+
+export const upfrontPaymentInformation = [
+    {
+        item:'Apple iPhone XS 256GB (Silver)',
+        chargeAmt:'$8299',
+        waiveIndicator:'No',
+        waiveReason:'',
+        action:[
+        ]
+    },
+    {
+        item:'Ultra Speed Service Plan 20GB Local Data',
+        chargeAmt:'$738',
+        waiveIndicator:'No',
+        waiveReason:'',
+        action:[
+        ]
+    },
+    {
+        item:'Tunnel Service Fee',
+        chargeAmt:'$18',
+        waiveIndicator:'No',
+        waiveReason:'',
+        action:[
+            'Edit'
+        ]
+    },
+]
+
+export const resourceStockBalance = [
+    {
+        qty:1,
+        resourceType:'Sim Card',
+        resourceName:'C-SIM',
+        skuCode:'2100141',
+        skuName:'CSL 64K USIM SIMTRIO',
+        avaQty:1204,
+    },
+    {
+        qty:1,
+        resourceType:'Handset',
+        resourceName:'Handset',
+        skuCode:'310054',
+        skuName:'Apple iPhone XS 256GB (Silver)',
+        avaQty:34,
+    }
+]
+
+export const deliveryDetails = [
+    {
+        trackingNumber:'',
+        serviceNo:'90000001',
+        status:'To Deliver',
+        SKUCode:'2100141',
+        SKUName:'CSL 64K USIM SIMTRIO',
+        ICCIDIMEI:'',
+        action:'',
+        reason:'',
+    },
+    {
+        trackingNumber:'',
+        serviceNo:'90000001',
+        status:'To Deliver',
+        SKUCode:'310054',
+        SKUName:'Apple iPhone XS 256GB (Silver)',
+        ICCIDIMEI:'',
+        action:'',
+        reason:'',
+    }
+]
+
+export const pickupDetails = [
+    {
+        serviceNo:'90000001',
+        status:'To Pickup',
+        SKUCode:'2100141',
+        SKUName:'CSL 64K USIM SIMTRIO',
+        ICCIDIMEI:'8985200092181001331',
+        action:'',
+        reason:'',
+    },
+    {
+        serviceNo:'90000001',
+        status:'To Pickup',
+        SKUCode:'310054',
+        SKUName:'Apple iPhone XS 256GB (Silver)',
+        ICCIDIMEI:'356938035643809',
+        action:'',
+        reason:'',
+    }
+]

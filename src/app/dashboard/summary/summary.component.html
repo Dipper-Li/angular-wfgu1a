@@ -101,17 +101,17 @@
                 <div class='row form-group'>
                     <div class='col-lg-4'>
                         <div class="text-muted">Staff No.</div>
-                        <input class="form-control" disabled>
+                        <input class="form-control" disabled value='T00423444'>
                     </div>
                     <div class='col-lg-4'>
                         <div class="text-muted">Staff Name</div>
-                        <input class="form-control" disabled>
+                        <input class="form-control" disabled value='GIGI LEE'>
                     </div>
                 </div>
                 <div class='row form-group'>
                     <div class='col-lg-4'>
                         <div class="text-muted">Contact No.</div>
-                        <input class="form-control" disabled>
+                        <input class="form-control" disabled value='28843321'>
                     </div>
                 </div>
                 <div class='row form-group'>
@@ -139,17 +139,17 @@
                 <div class='row form-group'>
                     <div class='col-lg-4'>
                         <div class="text-muted">Staff No.</div>
-                        <input class="form-control" disabled>
+                        <input class="form-control" disabled value='T01645453'>
                     </div>
                     <div class='col-lg-4'>
                         <div class="text-muted">Staff Name</div>
-                        <input class="form-control" disabled>
+                        <input class="form-control" disabled value='PAUL CHAN'>
                     </div>
                 </div>
                 <div class='row form-group'>
                     <div class='col-lg-4'>
                         <div class="text-muted">Contact No.</div>
-                        <input class="form-control" disabled>
+                        <input class="form-control" disabled value='28842212'>
                     </div>
                 </div>
                 <div class='row form-group'>
@@ -187,8 +187,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let i of [1,2]">
-                        <td><a>Application Form</a></td>
+                    <tr *ngFor="let i of ['Application Form','MNP Form']">
+                            <td><a>{{i}}</a></td>
                     </tr>
                 </tbody>
             </table>

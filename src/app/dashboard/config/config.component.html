@@ -172,7 +172,7 @@
                                     <select class="form-control">
                                         <option *ngFor='let item of [].constructor(5); let i = index'
                                             value="{{(today-60*60*24*1000*i)|date: 'ddMMyyyy'}}">
-                                            {{(today-60*60*24*1000*i)|date: 'dd MMM yyyy'}}</option>
+                                            {{(today+60*60*24*1000*i)|date: 'dd MMM yyyy'}}</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-4">
@@ -213,12 +213,12 @@
                                         <label style="margin-bottom:0px" class='pull-right'><input type="checkbox"
                                                 value="PrepaidSIM" name="afterwards">Prepaid SIM</label>
                                     </div>
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" type="text" value='WONG TAI YAN BRENDA'>
 
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="text-muted">Old Customer Document No / Prepaid SIM No.</div>
-                                    <input class="form-control" type="text">
+                                    <input class="form-control" type="text" value='Z123XXX(2)'>
                                 </div>
                             </div>
                         </ng-container>

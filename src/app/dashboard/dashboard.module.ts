@@ -16,11 +16,13 @@ import { PaymentComponent } from './payment/payment.component';
 import { PhysicalresourcesComponent } from './physicalresources/physicalresources.component';
 import { DocumentComponent } from './document/document.component';
 import { SummaryComponent } from './summary/summary.component';
-
 import { DemoMaterialModule } from '../material-module';
+import { CalendarModule } from 'primeng/calendar';
+
 @NgModule({
   declarations: [DashboardComponent, OfferselectionComponent,BasicinfoComponent, ConfigComponent, PaymentComponent, PhysicalresourcesComponent, DocumentComponent, SummaryComponent],
   imports: [
+    CalendarModule,
     SliderModule,
     DemoMaterialModule,
     DashboardRoutingModule,
@@ -31,7 +33,6 @@ import { DemoMaterialModule } from '../material-module';
     CheckboxModule,
     FormsModule,
     StepsModule,
-    
     ReactiveFormsModule
   ],
    entryComponents:[],

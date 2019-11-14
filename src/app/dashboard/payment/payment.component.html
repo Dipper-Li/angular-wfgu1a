@@ -29,88 +29,86 @@
                     <div class="text-muted">Document Type</div>
                     <select class="form-control" disabled [(ngModel)]='basicInfo.documentType'>
                         <option value=''>Pls Select</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
+                        <option value='HKID'>HKID</option>
+                        <option value='Travel'>Travel</option>
+                        <option value='Birth'>Birth</option>
                     </select>
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Document No. </div>
                     <input class="form-control" disabled [(ngModel)]='basicInfo.documentNum'>
                 </div>
-                <div class='col-lg-4' disabled>
+                <div class='col-lg-4'>
                     <div class="text-muted">Date of Birth</div>
-                    <select class="form-control">
-                        <option value=''>Pls Select</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
-                    </select>
+                    <p-calendar dateFormat='d M yy' inputStyleClass='form-control' [style]="{'width':'100%'}"
+                        [inputStyle]="{'width':'100%','border-color':'#ccc'}"></p-calendar>
                 </div>
             </div>
             <br>
             <div class='row'>
-                <div class='col-lg-4' disabled>
+                <div class='col-lg-4'>
                     <div class="text-muted">Title</div>
                     <select class="form-control">
                         <option value=''>Pls Select</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
+                        <option value='Miss' selected>Miss</option>
+                        <option value='Mrs'>Mrs</option>
+                        <option value='Mr'>Mr</option>
                     </select>
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Family Name</div>
-                    <input class="form-control">
+                    <input class="form-control" value='Wong'>
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Given Name</div>
-                    <input class="form-control">
+                    <input class="form-control" value='Tai Yan Brenda'>
                 </div>
             </div>
             <br>
             <div class='row'>
                 <div class='col-lg-4'>
                     <div class="text-muted">Contact Mobile No.</div>
-                    <input class="form-control">
+                    <input class="form-control" [(ngModel)]='basicInfo.num'>
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Contact Fixed Line No.</div>
-                    <input class="form-control">
+                    <input class="form-control" [(ngModel)]='basicInfo.contactFixedLineNum'>
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Contact Email Address</div>
-                    <input class="form-control">
+                    <input class="form-control" [(ngModel)]='basicInfo.contactEmailAddress'>
                 </div>
             </div>
             <br>
             <div class='row'>
                 <div class='col-lg-8'>
                     <div class="text-muted">Registered Address</div>
-                    <input class="form-control">
+                    <input class="form-control"
+                        value='Flat B, 17/F, Happy Building, 123 Fortune Road, Kowloon, Hong Kong'>
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">&nbsp;</div>
                     <button class="btn btn-primary">Address Input</button>
-                    <input style="margin-left: 10px" type="checkbox" value="afterwards" name="afterwards">No Address
-                    Proof
+                    <label class="checkbox-inline" style="margin-left: 10px">
+                        <input type="checkbox" value="afterwards" name="afterwards">No Address Proof
+                    </label>
                 </div>
             </div>
             <div class='row'>
                 <br>
-                <div class='col-lg-4' disabled>
+                <div class='col-lg-4'>
                     <div class="text-muted">Language</div>
                     <select class="form-control">
                         <option value=''>Pls Select</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
+                        <option value='eng' selected>English</option>
+                        <option value='chn'>Chinese</option>
+                        <option value='jap'>Japanese</option>
                     </select>
                 </div>
+                <div class='col-lg-4 br'>
+                    {{'TheClub account: '+basicInfo.contactEmailAddress}}
+                </div>
+
             </div>
             <div class='row br'>
                 <div class='col-lg-11 br'>
@@ -124,17 +122,21 @@
                         <thead>
                             <tr>
                                 <th width="25%">Subscriber</th>
-                                <th width="25%">Customer</th>
-                                <th width="25%">Relationship</th>
-                                <th width="25%">Action</th>
+                                <th width="35%">Customer</th>
+                                <th width="10%">Relationship</th>
+                                <th width="30%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let i of [1]">
-                                <td width="25%">(new group subscriber) MUP group 1</td>
-                                <td width="25%">HKID Z123XXX(2) Miss Wong Tai Yan Brenda</td>
-                                <td width="25%">Me</td>
-                                <td><a>Edit</a></td>
+                            <tr *ngFor="let r of relationship">
+                                <td width="25%">{{r.subscriber}}</td>
+                                <td width="25%">{{r.customer}}</td>
+                                <td width="25%">{{r.relationship}}</td>
+                                <td>
+                                    <ng-container *ngFor='let action of r.action'>
+                                        <a>{{action}}</a>
+                                    </ng-container>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -160,8 +162,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let i of [1,2]">
-                                <td width="25%">MyHKT</td>
+                            <tr *ngFor="let i of [1]">
+                                <td width="25%">HKTCare</td>
                                 <td><a>Remove</a></td>
                             </tr>
                         </tbody>
@@ -177,8 +179,10 @@
             <div class='row'>
                 <br>
                 <div class='col-lg-12'>
-                    <label><input type="checkbox" value="afterwards" name="correspondence ">Correspondence / Billing
-                        address is same as registered address</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" value="afterwards" name="correspondence ">Correspondence / Billing
+                        address is same as registered address
+                    </label>
                 </div>
             </div>
             <div class='row'>
@@ -189,17 +193,17 @@
             </div>
             <div class='row'>
                 <div class='col-lg-2'>
-                    <label style="margin-right:80px"><input type="checkbox" value="afterwards"
+                    <label class="checkbox-inline" style="margin-right:80px"><input type="checkbox" value="afterwards"
                             name="billMedium">SMS</label>
                 </div>
                 <div class='col-lg-2'>
 
-                    <label style="margin-right:80px"><input type="checkbox" value="afterwards"
+                    <label class="checkbox-inline" style="margin-right:80px"><input type="checkbox" value="afterwards"
                             name="billMedium">Email</label>
 
                 </div>
                 <div class='col-lg-2'>
-                    <label style="margin-right:80px"><input type="checkbox" value="afterwards"
+                    <label class="checkbox-inline" style="margin-right:80px"><input type="checkbox" value="afterwards"
                             name="billMedium">Paper</label>
                 </div>
             </div>
@@ -223,7 +227,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let i of [1,2]">
+                            <tr *ngFor="let i of [1]">
                                 <td>Paper Summary Recurring</td>
                                 <td>$10</td>
                                 <td>No</td>
@@ -236,8 +240,8 @@
             </div>
             <div class='row'>
                 <br>
-                <div class='col-lg-4' disabled>
-                    <div class="text-muted mandatory">Bill Language</div>
+                <div class='col-lg-4'>
+                    <div class="text-muted" mandatory>Bill Language</div>
                     <select class="form-control">
                         <option value=''>Pls Select</option>
                         <option value='1'>Bilingual</option>
@@ -256,7 +260,7 @@
             <div class='row'>
                 <br>
                 <div class='col-lg-12'>
-                    <label><input type="checkbox" value="afterwards" name="receiveAggrement ">Don't want to receive any
+                    <label class="checkbox-inline"><input type="checkbox" value="afterwards" name="receiveAggrement ">Don't want to receive any
                         promotional gifts, discounts, offers or materials</label>
                 </div>
             </div>
@@ -273,7 +277,7 @@
             <div class='row'>
                 <br>
                 <div class='col-lg-12'>
-                    <label><input type="checkbox" value="afterwards" name="correspondence ">New Account</label>
+                    <label class='checkbox-inline'><input type="checkbox" value="afterwards" name="correspondence ">New Account</label>
                 </div>
             </div>
             <div class='row'>
@@ -307,21 +311,20 @@
                 <br>
                 <div class='col-lg-3'>
                     <div class="text-muted">Card Holder Name</div>
-                    <input class="form-control">
+                    <input class="form-control" value='BRENDA WONG'>
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Card Holder Document Type</div>
-                    <select class="form-control">
+                    <select class="form-control" [(ngModel)]='basicInfo.documentType'>
                         <option value=''>Pls Select</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
+                        <option value='HKID'>HKID</option>
+                        <option value='Travel'>Travel</option>
+                        <option value='Birth'>Birth</option>
                     </select>
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Card Holder Document No.</div>
-                    <input class="form-control">
+                    <input class="form-control" [(ngModel)]='basicInfo.documentNum'>
                 </div>
             </div>
             <div class='row'>
@@ -330,15 +333,13 @@
                     <div class="text-muted">Credit Card Type</div>
                     <select class="form-control">
                         <option value=''>Pls Select</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
+                        <option value='VISA' selected>VISA</option>
+                        <option value='Master'>Master</option>
                     </select>
                 </div>
                 <div class='col-lg-4'>
                     <div class="text-muted">Credit Card No.</div>
-                    <input class="form-control">
+                    <input class="form-control" value='4111********1111'>
                 </div>
                 <div class='col-lg-3'>
                     <div>&nbsp;</div>
@@ -359,18 +360,22 @@
                             <tr>
                                 <th width="30%">Item</th>
                                 <th width="10%">Charge Amt</th>
-                                <th width="10%">Waive Indicator</th>
-                                <th width="40%">Waive Reason</th>
+                                <th width="15%">Waive Indicator</th>
+                                <th width="35%">Waive Reason</th>
                                 <th width="10%">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let i of [1,2,3]">
-                                <td>Apple iPhone X 256GB (White)</td>
-                                <td>$8299</td>
-                                <td>No</td>
-                                <td></td>
-                                <td><a>Edit</a></td>
+                            <tr *ngFor="let info of upfrontPaymentInformation">
+                                <td>{{info.item}}</td>
+                                <td>{{info.chargeAmt}}</td>
+                                <td>{{info.waiveIndicator}}</td>
+                                <td>{{info.waiveReason}}</td>
+                                <td>
+                                    <ng-container *ngFor='let action of info.action'>
+                                        <a>{{action}}</a>
+                                    </ng-container>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -396,9 +401,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let i of [1,2,3]">
-                                <td>Non HKID Card Holder Deposit</td>
-                                <td>$1000</td>
+                            <tr *ngFor="let i of [].constructor(1)">
+                                <td>No Address Proof Deposit</td>
+                                <td>$500</td>
                                 <td>No</td>
                                 <td></td>
                                 <td><a>Edit</a></td>

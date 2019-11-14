@@ -33,8 +33,6 @@ export class BasicinfoComponent implements OnInit {
     arr: [['']]
   });
   constructor(private http: HttpClient,private fb: FormBuilder, private router: Router, private shoppingCartService: ShoppingCartService,private _snackBar: MatSnackBar) {
-    console.log('this.basicInfo:',this.basicInfo);
-    this.basicInfo.patchValue(this.shoppingCartService.getBasicInfo());
   }
   openSnackBar() {
     this._snackBar.open('test','', {
@@ -44,11 +42,12 @@ export class BasicinfoComponent implements OnInit {
   t(error: HttpErrorResponse){console.log('error2:',error);return throwError(
     'Something bad happened; please try again later.');}
   ngOnInit() {
+    this.basicInfo.patchValue(this.shoppingCartService.getBasicInfo());
   }
 
   next() {
     console.log('this.basicInfo:',this.basicInfo);
-    this.shoppingCartService.saveBasicInfo(this.basicInfo.value);
+    this.shoppingCartService.saveBasicInfo(this.basicInfo.getRawValue());
     this.router.navigate(['dashboard','offerselection']);
   }
 }

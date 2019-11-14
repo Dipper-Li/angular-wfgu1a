@@ -2,7 +2,7 @@ import { product } from './../../service/pic';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ShoppingCartService } from '../../service/shopping-cart.service';
-
+import { resourceStockBalance, deliveryDetails, pickupDetails } from '../../service/data'
 @Component({
   selector: 'app-physicalresources',
   templateUrl: './physicalresources.component.html',
@@ -11,10 +11,16 @@ import { ShoppingCartService } from '../../service/shopping-cart.service';
 export class PhysicalresourcesComponent implements OnInit {
   pickup:any = 'delivery';
   subscribers;
-  phyResources = [];
+  phyResources = resourceStockBalance;
+  deliveryDetails = deliveryDetails;
+  dateNow = new Date();
+  dateTime = new Date();
+  pickupDetails = pickupDetails;
   constructor(private router: Router, private shoppingCartService: ShoppingCartService) { 
-    this.subscribers = this.shoppingCartService.getsubscribers();
-    this.getPhysicalResources();
+    this.dateTime.setHours(8);
+    this.dateTime.setMinutes(0);
+    //this.subscribers = this.shoppingCartService.getsubscribers();
+    //this.getPhysicalResources();
   }
 
   ngOnInit() {

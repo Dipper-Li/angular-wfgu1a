@@ -8,7 +8,7 @@
         <div class='row form-group'>
             <div class='col-lg-4'>
                 <div class="text-muted">Order No</div>
-                <input class="form-control" formControlName="orderNo">
+                <input class="form-control" formControlName="orderNo" readonly="readonly">
             </div>
             <div class='col-lg-4'>
                 <div class="text-muted">Order Nature</div>
@@ -42,10 +42,9 @@
                 <div class="text-muted">Document Type</div>
                 <select class="form-control" formControlName="documentType">
                     <option value=''>Pls Select</option>
-                    <option value='1'>1</option>
-                    <option value='2'>2</option>
-                    <option value='3'>3</option>
-                    <option value='4'>4</option>
+                    <option value='HKID'>HKID</option>
+                    <option value='Travel'>Travel</option>
+                    <option value='Birth'>Birth</option>
                 </select>
             </div>
             <div class='col-lg-4'>
@@ -189,7 +188,7 @@
                         <tr>
                             <th width="15%">Product Name</th>
                             <th width="15%">Official Site</th>
-                            <th width="25%">KB</th>
+                            <th>KB</th>
                             <th width="35%">Action</th>
                         </tr>
                     </thead>

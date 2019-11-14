@@ -22,6 +22,7 @@ export class AddToCartComponent implements OnInit{
   dateStart = new Date();
   dateEnd = new Date();
   product;
+  couponUsed = false;
   skuColorCode = {
     'White':'1',
     'Black':'2',
